@@ -4,5 +4,5 @@
 ## Author: Mayen
 ## X-Category: Library
 
-libs\LibStub-1.0\LibStub-1.0.lua
+libs\LibStub\LibStub.lua
 DRData-1.0.xml
