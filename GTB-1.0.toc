@@ -1,8 +1,0 @@
-## Interface: 30100
-## Title: Lib: Graphical Timer Bars - 1.0
-## Notes: Graphical timer bars libray
-## Author: Shadowed
-## X-Category: Library
-
-libs\LibStub\LibStub.lua
-GTB-1.0.xml
