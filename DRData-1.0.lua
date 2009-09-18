@@ -359,6 +359,18 @@ Data.spells = {
 	[8377] = "ctrlroot",
 	[31983] = "ctrlroot",
 
+	-- Web (Spider)
+	[4167] = "ctrlroot",
+	
+	-- Venom Web Spray (Silithid)
+	[54706] = "ctrlroot",
+	[55505] = "ctrlroot",
+	[55506] = "ctrlroot",
+	[55507] = "ctrlroot",
+	[55508] = "ctrlroot",
+	[55509] = "ctrlroot",
+	
+	
 	--[[ RANDOM ROOTS ]]--
 	-- Improved Hamstring
 	[23694] = "rndroot",
