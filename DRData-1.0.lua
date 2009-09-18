@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1002
+local minor = 1003
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -358,7 +358,6 @@ Data.spells = {
 	-- Earthgrab (Storm, Earth and Fire talent)
 	[8377] = "ctrlroot",
 	[31983] = "ctrlroot",
-	[64965] = "ctrlroot",
 
 	--[[ RANDOM ROOTS ]]--
 	-- Improved Hamstring
@@ -407,8 +406,6 @@ Data.spells = {
 	
 	-- Mind Control
 	[605] = "mc",
-	[10911] = "mc",
-	[10912] = "mc",
 
 	-- Banish
 	[710] = "banish",
