@@ -26,6 +26,27 @@ local L = {
 	["Taunts"] = "Taunts",
 }
 
+if GetLocale() == "frFR" then
+	L["Banish"] = "Bannissement"
+	L["Charge"] = "Charge"
+	L["Cheap Shot"] = "Coup bas"
+	L["Controlled stuns"] = "Etourdissements contrôlés"
+	L["Cyclone"] = "Cyclone"
+	L["Disarms"] = "Désarmements"
+	L["Disorients"] = "Désorientations"
+	L["Entrapment"] = "Piège"
+	L["Fears"] = "Peurs"
+	L["Horrors"] = "Horreurs"
+	L["Mind Control"] = "Contrôle mental"
+	L["Random roots"] = "Immobilisations aléatoires"
+	L["Random stuns"] = "Etourdissemensts aléatoires"
+	L["Controlled roots"] = "Immobilisations contrôlées"
+	L["Scatter Shot"] = "Flèche de dispersion"
+	L["Silences"] = "Silences"
+	L["Hibernate"] = "Hibernation"
+	L["Taunts"] = "Provocations"
+end
+
 -- How long before DR resets
 -- While everyone will tell you it's 15 seconds, it's actually 16 - 20 seconds with 18 being a decent enough average
 Data.RESET_TIME = 18
