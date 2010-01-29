@@ -319,10 +319,6 @@ Data.spells = {
 	-- Impact
 	[12355] = "rndstun",
 
-	-- Improved Fire Nova Totem
-	[64538] = "rndstun",
-	[51880] = "rndstun",
-	
 	-- Stoneclaw Stun
 	[39796] = "rndstun",
 	
