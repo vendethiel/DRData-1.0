@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1003
+local minor = 1004
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -145,6 +145,7 @@ Data.spells = {
 	-- Nether Shock
 	[53588] = "silence",
 	[53589] = "silence",
+	[62347] = "silence",
 	
 	-- Garrote
 	[1330] = "silence",
@@ -237,7 +238,7 @@ Data.spells = {
 	
 	-- Intimidating Shout
 	[5246] = "fear",
-	
+	[20511] = "fear",
 
 	--[[ CONTROL STUNS ]]--
 	-- Intercept (Felguard)
@@ -281,6 +282,7 @@ Data.spells = {
 	
 	-- Intimidation
 	[19577] = "ctrlstun",
+	[24394] = "ctrlstun",
 
 	-- Maim
 	[22570] = "ctrlstun",
@@ -295,6 +297,7 @@ Data.spells = {
 
 	-- Intercept
 	[20252] = "ctrlstun",
+	[20253] = "ctrlstun",
 	
 	-- Deep Freeze
 	[44572] = "ctrlstun",
@@ -420,6 +423,7 @@ Data.spells = {
 	--[[ MISC ]]--
 	-- Scatter Shot
 	[19503] = "scatters",
+	[37506] = "scatters",
 
 	-- Cheap Shot
 	[1833] = "cheapshot",
@@ -442,7 +446,6 @@ Data.spells = {
 	[18647] = "banish",
 	
 	-- Entrapment
-	[64804] = "entrapment",
 	[64804] = "entrapment",
 	[19185] = "entrapment",
 }
