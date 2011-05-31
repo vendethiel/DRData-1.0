@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1007
+local minor = 1008
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -101,7 +101,6 @@ Data.spells = {
 	[24259] = "silence", -- Spell Lock (Felhunter)
 	[47476] = "silence", -- Strangulate
 	[18498] = "silence", -- Gag Order (Warrior talent)
-	[74347] = "silence", -- Gag Order (Warrior talent) -- FIXME: duplicate ?
 	[81261] = "silence", -- Solar Beam
 	[31935] = "silence", -- Avenger's Shield
 
