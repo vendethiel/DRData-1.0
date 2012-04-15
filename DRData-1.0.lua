@@ -22,9 +22,9 @@ local L = {
 	["Dragon's Breath"] = "Dragon's Breath",
 	["Silences"] = "Silences",
 	["Taunts"] = "Taunts",
-	["Bind Elemental"] = ["Bind Elemental"],
-	["Charge"] = ["Charge"],
-	["Intercept"] = ["Intercept"],
+	["Bind Elemental"] = "Bind Elemental",
+	["Charge"] = "Charge",
+	["Intercept"] = "Intercept"
 }
 
 if GetLocale() == "frFR" then
