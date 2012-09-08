@@ -1,12 +1,9 @@
 local major = "DRData-1.0"
-local minor = 1009
+local minor = 1010
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
 if( not Data ) then return end
-
-local wow_500 = select(4, GetBuildInfo()) >= 50000 or nil
-local not_wow_500 = wow_500 and nil
 
 local L = {
 	["Banish"] = "Banish",
@@ -59,20 +56,16 @@ Data.spells = {
 	[   355] = "taunt", -- Taunt (Warrior)
 	[ 53477] = "taunt", -- Taunt (Hunter tenacity pet)
 	[  6795] = "taunt", -- Growl (Druid)
-	[115546] = wow_500 and "taunt", -- Provoke (Monk)
+	[115546] = "taunt", -- Provoke (Monk)
 	[ 56222] = "taunt", -- Dark Command
 	[ 62124] = "taunt", -- Hand of Reckoning
 	[ 31790] = "taunt", -- Righteous Defense
 	[ 20736] = "taunt", -- Distracting Shot
-	[  1161] = not_wow_500 and "taunt", -- Challenging Shout
-	[  5209] = not_wow_500 and "taunt", -- Challenging Roar
 	[ 57603] = "taunt", -- Death Grip
 	[ 36213] = "taunt", -- Angered Earth -- FIXME: NPC ability ?
 	[ 17735] = "taunt", -- Suffering (Voidwalker)
-	[ 58857] = not_wow_500 and "taunt", -- Twin Howl (Spirit wolves)
 
 	--[[ DISORIENTS ]]--
-	[ 49203] = not_wow_500 and "disorient", -- Hungering Cold
 	[  6770] = "disorient", -- Sap
 	[  1776] = "disorient", -- Gouge
 	[ 51514] = "disorient", -- Hex
@@ -89,7 +82,6 @@ Data.spells = {
 	[ 20066] = "disorient", -- Repentance
 	[ 90337] = "disorient", -- Bad Manner (Monkey) -- FIXME: to check
 	[  2637] = "disorient", -- Hibernate
-	[ 82676] = not_wow_500 and "disorient", -- Ring of Frost
 	[ 82691] = "disorient", -- Ring of Frost
 
 	--[[ SILENCES ]]--
@@ -102,9 +94,6 @@ Data.spells = {
 	[ 80483] = "silence", -- Arcane Torrent (Focus version)
 	[ 15487] = "silence", -- Silence
 	[ 34490] = "silence", -- Silencing Shot
-	[ 18425] = not_wow_500 and "silence", -- Improved Kick (rank 1)
-	[ 86759] = not_wow_500 and "silence", -- Improved Kick (rank 2)
-	[ 18469] = not_wow_500 and "silence", -- Improved Counterspell (rank 1)
 	[ 55021] = "silence", -- Improved Counterspell (rank 2)
 	[ 24259] = "silence", -- Spell Lock (Felhunter)
 	[ 47476] = "silence", -- Strangulate
@@ -133,7 +122,6 @@ Data.spells = {
 	--[[ CONTROL STUNS ]]--
 	[ 89766] = "ctrlstun", -- Axe Toss (Felguard)
 	[ 50519] = "ctrlstun", -- Sonic Blast (Bat)
-	[ 12809] = not_wow_500 and "ctrlstun", -- Concussion Blow
 	[ 46968] = "ctrlstun", -- Shockwave
 	[   853] = "ctrlstun", -- Hammer of Justice
 	[  5211] = "ctrlstun", -- Bash
@@ -142,25 +130,22 @@ Data.spells = {
 	[   408] = "ctrlstun", -- Kidney Shot
 	[ 20549] = "ctrlstun", -- War Stomp
 	[ 20252] = "ctrlstun", -- Intercept
-	[ 20253] = not_wow_500 and "ctrlstun", -- Intercept
 	[ 44572] = "ctrlstun", -- Deep Freeze
 	[ 30283] = "ctrlstun", -- Shadowfury
-	[  2812] = not_wow_500 and "ctrlstun", -- Holy Wrath (not holy wrath anymore in MoP. doesn't stun anymore either. SpellID still exists though)
 	[ 22703] = "ctrlstun", -- Inferno Effect
 	[ 54785] = "ctrlstun", -- Demon Leap (Warlock)
 	[ 47481] = "ctrlstun", -- Gnaw (Ghoul)
 	[ 93433] = "ctrlstun", -- Burrow Attack (Worm)
 	[ 56626] = "ctrlstun", -- Sting (Wasp)
-	[ 85388] = not_wow_500 and "ctrlstun", -- Throwdown
 	[  1833] = "ctrlstun", -- Cheap Shot
 	[  9005] = "ctrlstun", -- Pounce
 	[ 88625] = "ctrlstun", -- Holy Word: Chastise
 
 	--[[ RANDOM STUNS ]]--
-	[ 64343] = not_wow_500 and "rndstun", -- Impact
-	[ 39796] = not_wow_500 and "rndstun", -- Stoneclaw Stun
-	[ 11210] = not_wow_500 and "rndstun", -- Improved Polymorph (rank 1)
-	[ 12592] = not_wow_500 and "rndstun", -- Improved Polymorph (rank 2)
+	[ 64343] = "rndstun", -- Impact
+	[ 39796] = "rndstun", -- Stoneclaw Stun
+	[ 11210] = "rndstun", -- Improved Polymorph (rank 1)
+	[ 12592] = "rndstun", -- Improved Polymorph (rank 2)
 
 	--[[ ROOTS ]]--
 	[ 33395] = "ctrlroot", -- Freeze (Water Elemental)
@@ -173,15 +158,7 @@ Data.spells = {
 	[ 63374] = "ctrlroot", -- Frozen Power
 	[  4167] = "ctrlroot", -- Web (Spider)
 	[ 54706] = "ctrlroot", -- Venom Web Spray (Silithid)
-	[ 19306] = not_wow_500 and "ctrlroot", -- Counterattack
 	[ 90327] = "ctrlroot", -- Lock Jaw (Dog)
-	[ 11190] = not_wow_500 and "ctrlroot", -- Improved Cone of Cold (rank 1)
-	[ 12489] = not_wow_500 and "ctrlroot", -- Improved Cone of Cold (rank 2)
-
-	--[[ RANDOM ROOTS ]]--
-	[ 23694] = not_wow_500 and "rndroot", -- Improved Hamstring -- FIXME: to check
-	[ 44745] = not_wow_500 and "rndroot", -- Shattered Barrier (rank 1)
-	[ 54787] = not_wow_500 and "rndroot", -- Shattered Barrier (rank 2)
 
 	--[[ HORROR ]]--
 	[  6789] = "horror", -- Death Coil
@@ -196,7 +173,6 @@ Data.spells = {
 	[ 33786] = "cyclone",       -- Cyclone
 	[ 76780] = "bindelemental", -- Bind Elemental
 	[   100] = "charge",        -- Charge
-	[ 20252] = not_wow_500 and "intercept",     -- Intercept
 }
 
 -- DR Category names
@@ -210,8 +186,7 @@ Data.categoryNames = {
 	["fear"] = L["Fears"],
 	["horror"] = L["Horrors"],
 	["mc"] = L["Mind Control"],
-	["rndroot"] = not_wow_500 and L["Random roots"],
-	["rndstun"] = not_wow_500 and L["Random stuns"],
+	["rndstun"] = L["Random stuns"],
 	["ctrlroot"] = L["Controlled roots"],
 	["scatters"] = L["Scatter Shot"],
 	["dragons"] = L["Dragon's Breath"],
@@ -219,7 +194,6 @@ Data.categoryNames = {
 	["taunt"] = L["Taunts"],
 	["bindelemental"] = L["Bind Elemental"],
 	["charge"] = L["Charge"],
-	["intercept"] = not_wow_500 and L["Intercept"],
 }
 
 -- Categories that have DR in PvE as well as PvP
@@ -228,6 +202,7 @@ Data.pveDR = {
 	["rndstun"] = not_wow_500 and true,
 	["taunt"] = true,
 	["cyclone"] = true,
+	["bindelemental"] = true,
 }
 
 -- Public APIs
