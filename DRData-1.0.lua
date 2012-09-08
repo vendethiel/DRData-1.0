@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1010
+local minor = 1012
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -7,41 +7,42 @@ if( not Data ) then return end
 
 local L = {
 	["Banish"] = "Banish",
+	["Bind Elemental"] = "Bind Elemental",
+	["Charge"] = "Charge",
+	["Controlled roots"] = "Controlled roots",
 	["Controlled stuns"] = "Controlled stuns",
 	["Cyclone"] = "Cyclone",
 	["Disarms"] = "Disarms",
 	["Disorients"] = "Disorients",
+	["Dragon's Breath"] = "Dragon's Breath",
 	["Entrapment"] = "Entrapment",
 	["Fears"] = "Fears",
 	["Horrors"] = "Horrors",
+	["Ice Ward"] = "Ice Ward",
 	["Mind Control"] = "Mind Control",
-	["Random roots"] = "Random roots",
 	["Random stuns"] = "Random stuns",
-	["Controlled roots"] = "Controlled roots",
 	["Scatter Shot"] = "Scatter Shot",
-	["Dragon's Breath"] = "Dragon's Breath",
 	["Silences"] = "Silences",
 	["Taunts"] = "Taunts",
-	["Bind Elemental"] = "Bind Elemental",
-	["Charge"] = "Charge",
-	["Intercept"] = "Intercept"
 }
 
 if GetLocale() == "frFR" then
 	L["Banish"] = "Bannissement"
-	L["Controlled stuns"] = "Etourdissements contrôlés"
+	L["Bind Elemental"] = "Lier un élémentaire"
+	L["Charge"] = "Charge"
+	L["Controlled roots"] = "Immobilisations"
+	L["Controlled stuns"] = "Etourdissements"
 	L["Cyclone"] = "Cyclone"
 	L["Disarms"] = "Désarmements"
 	L["Disorients"] = "Désorientations"
+	L["Dragon's Breath"] = "Souffle du dragon"
 	L["Entrapment"] = "Piège"
 	L["Fears"] = "Peurs"
 	L["Horrors"] = "Horreurs"
+	L["Ice Ward"] = "Garde glaciale"
 	L["Mind Control"] = "Contrôle mental"
-	L["Random roots"] = "Immobilisations aléatoires"
 	L["Random stuns"] = "Etourdissemensts aléatoires"
-	L["Controlled roots"] = "Immobilisations contrôlées"
 	L["Scatter Shot"] = "Flèche de dispersion"
-	L["Dragon's Breath"] = "Souffle du dragon"
 	L["Silences"] = "Silences"
 	L["Taunts"] = "Provocations"
 end
@@ -258,28 +259,29 @@ Data.spells = {
 -- DR Category names
 Data.categoryNames = {
 	["banish"] = L["Banish"],
+	["bindelemental"] = L["Bind Elemental"],
+	["charge"] = L["Charge"],
+	["ctrlroot"] = L["Controlled roots"],
 	["ctrlstun"] = L["Controlled stuns"],
 	["cyclone"] = L["Cyclone"],
 	["disarm"] = L["Disarms"],
 	["disorient"] = L["Disorients"],
+	["dragons"] = L["Dragon's Breath"],
 	["entrapment"] = L["Entrapment"],
 	["fear"] = L["Fears"],
 	["horror"] = L["Horrors"],
+	["iceward"]= L["Ice Ward"],
 	["mc"] = L["Mind Control"],
 	["rndstun"] = L["Random stuns"],
-	["ctrlroot"] = L["Controlled roots"],
 	["scatters"] = L["Scatter Shot"],
-	["dragons"] = L["Dragon's Breath"],
 	["silence"] = L["Silences"],
 	["taunt"] = L["Taunts"],
-	["bindelemental"] = L["Bind Elemental"],
-	["charge"] = L["Charge"],
 }
 
 -- Categories that have DR in PvE as well as PvP
 Data.pveDR = {
 	["ctrlstun"] = true,
-	["rndstun"] = not_wow_500 and true,
+	["rndstun"] = true,
 	["taunt"] = true,
 	["cyclone"] = true,
 	["bindelemental"] = true,
