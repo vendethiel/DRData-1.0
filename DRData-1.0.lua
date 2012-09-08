@@ -66,10 +66,13 @@ Data.spells = {
 	[ 17735] = "taunt", -- Suffering (Voidwalker)
 
 	--[[ DISORIENTS ]]--
-	[  6770] = "disorient", -- Sap
-	[  1776] = "disorient", -- Gouge
-	[ 51514] = "disorient", -- Hex
-	[  9484] = "disorient", -- Shackle Undead
+	-- Druid
+	[  2637] = "disorient", -- Hibernate
+	[    99] = "disorient", -- Disorienting Roar (talent)
+    -- Hunter
+	[  3355] = "disorient", -- Freezing Trap
+	[ 19386] = "disorient", -- Wyvern Sting
+    -- Mage
 	[   118] = "disorient", -- Polymorph
 	[ 28272] = "disorient", -- Polymorph (pig)
 	[ 28271] = "disorient", -- Polymorph (turtle)
@@ -77,101 +80,178 @@ Data.spells = {
 	[ 61025] = "disorient", -- Polymorph (serpent) -- FIXME: gone ?
 	[ 61721] = "disorient", -- Polymorph (rabbit)
 	[ 61780] = "disorient", -- Polymorph (turkey)
-	[  3355] = "disorient", -- Freezing Trap
-	[ 19386] = "disorient", -- Wyvern Sting
-	[ 20066] = "disorient", -- Repentance
-	[ 90337] = "disorient", -- Bad Manner (Monkey) -- FIXME: to check
-	[  2637] = "disorient", -- Hibernate
 	[ 82691] = "disorient", -- Ring of Frost
+    -- Monk
+	[115078] = "disorient", -- Paralysis
+    -- Paladin
+	[115750] = "disorient", -- Blinding Light
+	[ 20066] = "disorient", -- Repentance
+    -- Priest
+	[  9484] = "disorient", -- Shackle Undead
+    -- Rogue
+	[  1776] = "disorient", -- Gouge
+	[  6770] = "disorient", -- Sap
+    -- Shaman
+	[ 51514] = "disorient", -- Hex
+    -- Pandaren
+	[107079] = "disorient", -- Quaking Palm
 
 	--[[ SILENCES ]]--
+	-- Death Knight
+	[ 47476] = "silence", -- Strangulate
+    -- Druid
+	[ 78675] = "silence", -- Solar Beam
+	[ 81261] = "silence", -- Solar Beam -- FIXME: check id
+    -- Hunter
+	[ 34490] = "silence", -- Silencing Shot
 	[ 50479] = "silence", -- Nether Shock (Nether ray)
+    -- Mage
+	[ 12598] = "silence", -- Improved Counterspell
+	[102051] = "silence", -- Frostjaw (talent)
+    -- Paladin
+	[ 31935] = "silence", -- Avenger's Shield
+    -- Priest
+	[ 15487] = "silence", -- Silence
+    -- Rogue
 	[  1330] = "silence", -- Garrote
+    -- Warlock
+	[103135] = "silence", -- Spell Lock (Felhunter)
+    -- Warrior
+	[ 18498] = "silence", -- Glyph of Gag Order -- FIXME: check id
+    -- Blood Elf
 	[ 25046] = "silence", -- Arcane Torrent (Energy version)
 	[ 28730] = "silence", -- Arcane Torrent (Mana version)
 	[ 50613] = "silence", -- Arcane Torrent (Runic power version)
 	[ 69179] = "silence", -- Arcane Torrent (Rage version)
 	[ 80483] = "silence", -- Arcane Torrent (Focus version)
-	[ 15487] = "silence", -- Silence
-	[ 34490] = "silence", -- Silencing Shot
-	[ 55021] = "silence", -- Improved Counterspell (rank 2)
-	[ 24259] = "silence", -- Spell Lock (Felhunter)
-	[ 47476] = "silence", -- Strangulate
-	[ 18498] = "silence", -- Gag Order (Warrior talent)
-	[ 81261] = "silence", -- Solar Beam
-	[ 31935] = "silence", -- Avenger's Shield
 
 	--[[ DISARMS ]]--
+	-- Hunter
 	[ 91644] = "disarm", -- Snatch (Bird of Prey)
-	[ 51722] = "disarm", -- Dismantle
-	[   676] = "disarm", -- Disarm
-	[ 64058] = "disarm", -- Psychic Horror (Disarm effect)
 	[ 50541] = "disarm", -- Clench (Scorpid)
+    -- Monk
+	[117368] = "disarm", -- Grapple Weapon
+	-- Priest
+	[ 64058] = "disarm", -- Psychic Horror (Disarm effect)
+    -- Rogue Dismantle
+	[ 51722] = "disarm", -- Dismantle
+    -- Warlock
+	[124539] = "disarm", -- Voidwalker: Disarm
+    -- Warrior Disarm
+	[   676] = "disarm", -- Disarm
 
 	--[[ FEARS ]]--
-	[  2094] = "fear", -- Blind
-	[  5782] = "fear", -- Fear (Warlock)
-	[  6358] = "fear", -- Seduction (Succubus)
-	[  5484] = "fear", -- Howl of Terror
-	[  8122] = "fear", -- Psychic Scream
+	-- Hunter
 	[  1513] = "fear", -- Scare Beast
+    -- Paladin
 	[ 10326] = "fear", -- Turn Evil
+    -- Priest
+	[  8122] = "fear", -- Psychic Scream
+	-- [] = "fear", -- Psyfiend Fear (ID ?)
+    -- Rogue
+	[  2094] = "fear", -- Blind
+    -- Warlock
+	[  5782] = "fear", -- Fear (Warlock)
+	[111397] = "fear", -- Blood Fear (talent)
+	[  5484] = "fear", -- Howl of Terror
+	[  6358] = "fear", -- Seduction (Succubus)
+    -- Warrior
 	[  5246] = "fear", -- Intimidating Shout (main target)
 	[ 20511] = "fear", -- Intimidating Shout (secondary targets)
 
 	--[[ CONTROL STUNS ]]--
-	[ 89766] = "ctrlstun", -- Axe Toss (Felguard)
-	[ 50519] = "ctrlstun", -- Sonic Blast (Bat)
-	[ 46968] = "ctrlstun", -- Shockwave
-	[   853] = "ctrlstun", -- Hammer of Justice
-	[  5211] = "ctrlstun", -- Bash
-	[ 24394] = "ctrlstun", -- Intimidation
-	[ 22570] = "ctrlstun", -- Maim
-	[   408] = "ctrlstun", -- Kidney Shot
-	[ 20549] = "ctrlstun", -- War Stomp
-	[ 20252] = "ctrlstun", -- Intercept
-	[ 44572] = "ctrlstun", -- Deep Freeze
-	[ 30283] = "ctrlstun", -- Shadowfury
-	[ 22703] = "ctrlstun", -- Inferno Effect
-	[ 54785] = "ctrlstun", -- Demon Leap (Warlock)
+	-- Death Knight
+	[108194] = "ctrlstun", -- Asphyxiate (talent)
 	[ 47481] = "ctrlstun", -- Gnaw (Ghoul)
-	[ 93433] = "ctrlstun", -- Burrow Attack (Worm)
+    -- Druid
+	[ 22570] = "ctrlstun", -- Maim
+	[102546] = "ctrlstun", -- Pounce
+	[  5211] = "ctrlstun", -- Mighty Bash (talent)
+    -- Hunter
+	[ 19577] = "ctrlstun", -- Intimidation
+	[ 90337] = "ctrlstun", -- Bad Manner (Monkey)
+	[ 50519] = "ctrlstun", -- Sonic Blast (Bat)
 	[ 56626] = "ctrlstun", -- Sting (Wasp)
-	[  1833] = "ctrlstun", -- Cheap Shot
-	[  9005] = "ctrlstun", -- Pounce
+    -- Mage
+	[ 44572] = "ctrlstun", -- Deep Freeze
+	[ 11129] = "ctrlstun", -- Combustion (Fire)
+    -- Monk
+	[119392] = "ctrlstun", -- Charging Ox Wave (talent)
+	[119381] = "ctrlstun", -- Leg Sweep (talent)
+	[122057] = "ctrlstun", -- Clash (Brewmaster)
+	[113656] = "ctrlstun", -- Fists of Fury (Windwalker)
+    -- Paladin
+	[   853] = "ctrlstun", -- Hammer of Justice
+	[119072] = "ctrlstun", -- Holy Wrath (Protection)
+	[105593] = "ctrlstun", -- Fist of Justice (talent)
+    -- Priest
 	[ 88625] = "ctrlstun", -- Holy Word: Chastise
+    -- Rogue
+	[  1833] = "ctrlstun", -- Cheap Shot
+	[   408] = "ctrlstun", -- Kidney Shot
+    -- Shaman
+	[108269] = "ctrlstun", -- Capacitor Totem
+	-- Warlock
+	[ 30283] = "ctrlstun", -- Shadowfury
+	[ 89766] = "ctrlstun", -- Axe Toss (Felguard)
+	[ 22703] = "ctrlstun", -- Infernal Awakening (Infernal)
+    -- Warrior
+	[ 46968] = "ctrlstun", -- Shockwave
+    -- Tauren
+	[ 20549] = "ctrlstun", -- War Stomp
 
 	--[[ RANDOM STUNS ]]--
-	[ 64343] = "rndstun", -- Impact
-	[ 39796] = "rndstun", -- Stoneclaw Stun
-	[ 11210] = "rndstun", -- Improved Polymorph (rank 1)
-	[ 12592] = "rndstun", -- Improved Polymorph (rank 2)
+	-- Rogue
+	[ 35202] = "rndstun", -- Paralysis (Paralytic Poison five stack stun)
+    -- Warrior
+	[118000] = "rndstun", -- Dragon Roar (talent)
 
 	--[[ ROOTS ]]--
-	[ 33395] = "ctrlroot", -- Freeze (Water Elemental)
+	-- Death Knight
 	[ 50041] = "ctrlroot", -- Chilblains
-	[ 50245] = "ctrlroot", -- Pin (Crab)
-	[   122] = "ctrlroot", -- Frost Nova
+	-- Druid
 	[   339] = "ctrlroot", -- Entangling Roots
 	[ 19975] = "ctrlroot", -- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
-	[ 51485] = "ctrlroot", -- Earth's Grasp
-	[ 63374] = "ctrlroot", -- Frozen Power
+    -- Hunter
+	[ 50245] = "ctrlroot", -- Pin (Crab)
 	[  4167] = "ctrlroot", -- Web (Spider)
 	[ 54706] = "ctrlroot", -- Venom Web Spray (Silithid)
 	[ 90327] = "ctrlroot", -- Lock Jaw (Dog)
+    -- Mage
+	[   122] = "ctrlroot", -- Frost Nova
+	[ 33395] = "ctrlroot", -- Freeze (Water Elemental)
+    -- Monk
+	[116095] = "ctrlroot", -- Disable
+    -- Priest
+	[108920] = "ctrlroot", -- Void Tendrils
+    -- Shaman
+	[ 51485] = "ctrlroot", -- Earth's Grasp
+	[ 63374] = "ctrlroot", -- Frozen Power
+    -- Warrior
+	[107566] = "ctrlroot", -- Staggering Shout
 
 	--[[ HORROR ]]--
-	[  6789] = "horror", -- Death Coil
+	-- Priest
 	[ 64044] = "horror", -- Psychic Horror
+	-- Warlock
+	[  6789] = "horror", -- Mortal Coil
 
 	--[[ MISC ]]--
-	[ 19503] = "scatters",      -- Scatter Shot
-	[ 31661] = "dragons",       -- Dragon's Breath
-	[   605] = "mc",            -- Mind Control
-	[   710] = "banish",        -- Banish
-	[ 19185] = "entrapment",    -- Entrapment
+	-- Druid
 	[ 33786] = "cyclone",       -- Cyclone
+	-- Hunter
+	[ 19503] = "scatters",      -- Scatter Shot
+	[ 19185] = "entrapment",    -- Entrapment
+	-- Mage
+	[ 31661] = "dragons",       -- Dragon's Breath
+	[111264] = "iceward",       -- Ice Ward
+	-- Priest
+	[   605] = "mc",            -- Mind Control
+	-- Shaman
 	[ 76780] = "bindelemental", -- Bind Elemental
+	-- Warlock
+	[   710] = "banish",        -- Banish
+	-- Warrior
 	[   100] = "charge",        -- Charge
 }
 
