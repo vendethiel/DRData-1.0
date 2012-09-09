@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1015
+local minor = 1016
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -183,6 +183,7 @@ Data.spells = {
 	[  9005] = "ctrlstun", -- Pounce
 	[  5211] = "ctrlstun", -- Mighty Bash (talent)
 	[102795] = "ctrlstun", -- Bear Hug
+	[113801] = "ctrlstun", -- Bash (treants in feral spec) (Bugged by blizzard - it instantly applies all 3 levels of DR right now, making any target instantly immune to ctrlstuns)
     -- Hunter
 	[ 24394] = "ctrlstun", -- Intimidation
 	[ 90337] = "ctrlstun", -- Bad Manner (Monkey)
@@ -230,11 +231,13 @@ Data.spells = {
 	-- Druid
 	[   339] = "ctrlroot", -- Entangling Roots
 	[ 19975] = "ctrlroot", -- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
+	[102359] = "ctrlroot", -- Mass Entanglement (talent)
     -- Hunter
 	[ 50245] = "ctrlroot", -- Pin (Crab)
 	[  4167] = "ctrlroot", -- Web (Spider)
 	[ 54706] = "ctrlroot", -- Venom Web Spray (Silithid)
 	[ 90327] = "ctrlroot", -- Lock Jaw (Dog)
+	[128405] = "ctrlroot", -- Narrow Escape (talent)
     -- Mage
 	[   122] = "ctrlroot", -- Frost Nova
 	[ 33395] = "ctrlroot", -- Freeze (Water Elemental)
