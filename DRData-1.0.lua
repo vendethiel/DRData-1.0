@@ -163,24 +163,27 @@ Data.spells = {
 	--[[ CONTROL STUNS ]]--
 	-- Death Knight
 	[108194] = "ctrlstun", -- Asphyxiate (talent)
-	[ 47481] = "ctrlstun", -- Gnaw (Ghoul)
+	[ 91800] = "ctrlstun", -- Gnaw (Ghoul)
+	[ 91797] = "ctrlstun", -- Monstrous Blow (Dark Transformation Ghoul)
     -- Druid
 	[ 22570] = "ctrlstun", -- Maim
-	[102546] = "ctrlstun", -- Pounce
+	[  9005] = "ctrlstun", -- Pounce
 	[  5211] = "ctrlstun", -- Mighty Bash (talent)
+	[102795] = "ctrlstun", -- Bear Hug
     -- Hunter
-	[ 19577] = "ctrlstun", -- Intimidation
+	[ 24394] = "ctrlstun", -- Intimidation
 	[ 90337] = "ctrlstun", -- Bad Manner (Monkey)
 	[ 50519] = "ctrlstun", -- Sonic Blast (Bat)
 	[ 56626] = "ctrlstun", -- Sting (Wasp)
+	[117526] = "ctrlstun", -- Binding Shot (talent)
     -- Mage
 	[ 44572] = "ctrlstun", -- Deep Freeze
-	[ 11129] = "ctrlstun", -- Combustion (Fire)
+	[118271] = "ctrlstun", -- Combustion Impact (Combustion; Fire)
     -- Monk
 	[119392] = "ctrlstun", -- Charging Ox Wave (talent)
 	[119381] = "ctrlstun", -- Leg Sweep (talent)
-	[122057] = "ctrlstun", -- Clash (Brewmaster)
-	[113656] = "ctrlstun", -- Fists of Fury (Windwalker)
+	[122242] = "ctrlstun", -- Clash (Brewmaster)
+	[120086] = "ctrlstun", -- Fists of Fury (Windwalker)
     -- Paladin
 	[   853] = "ctrlstun", -- Hammer of Justice
 	[119072] = "ctrlstun", -- Holy Wrath (Protection)
@@ -191,13 +194,14 @@ Data.spells = {
 	[  1833] = "ctrlstun", -- Cheap Shot
 	[   408] = "ctrlstun", -- Kidney Shot
     -- Shaman
-	[108269] = "ctrlstun", -- Capacitor Totem
+	[118905] = "ctrlstun", -- Static Charge (Capacitor Totem)
 	-- Warlock
 	[ 30283] = "ctrlstun", -- Shadowfury
 	[ 89766] = "ctrlstun", -- Axe Toss (Felguard)
 	[ 22703] = "ctrlstun", -- Infernal Awakening (Infernal)
     -- Warrior
-	[ 46968] = "ctrlstun", -- Shockwave
+	[132168] = "ctrlstun", -- Shockwave
+	[105771] = "ctrlstun", -- Warbringer (talent)
     -- Tauren
 	[ 20549] = "ctrlstun", -- War Stomp
 
@@ -253,7 +257,7 @@ Data.spells = {
 	-- Warlock
 	[   710] = "banish",        -- Banish
 	-- Warrior
-	[   100] = "charge",        -- Charge
+	[  7922] = "charge",        -- Charge
 }
 
 -- DR Category names
