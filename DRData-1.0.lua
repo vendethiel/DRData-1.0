@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1014
+local minor = 1015
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -187,7 +187,7 @@ Data.spells = {
 	[ 24394] = "ctrlstun", -- Intimidation
 	[ 90337] = "ctrlstun", -- Bad Manner (Monkey)
 	[ 50519] = "ctrlstun", -- Sonic Blast (Bat)
-	[ 56626] = "ctrlstun", -- Sting (Wasp)
+	-- [ 56626] = "ctrlstun", -- Sting (Wasp) --FIXME: this doesn't share with ctrlstun anymore. Unknown what it is right now, so watch for it on www.arenajunkies.com/topic/227748-mop-diminishing-returns-updating-the-list
 	[117526] = "ctrlstun", -- Binding Shot (talent)
     -- Mage
 	[ 44572] = "ctrlstun", -- Deep Freeze
@@ -202,7 +202,7 @@ Data.spells = {
 	[119072] = "ctrlstun", -- Holy Wrath (Protection)
 	[105593] = "ctrlstun", -- Fist of Justice (talent)
     -- Priest
-	[ 88625] = "ctrlstun", -- Holy Word: Chastise
+	-- [ 88625] = "ctrlstun", -- Holy Word: Chastise --FIXME: this doesn't share with ctrlstun anymore. Unknown what it is right now, so watch for it on www.arenajunkies.com/topic/227748-mop-diminishing-returns-updating-the-list
     -- Rogue
 	[  1833] = "ctrlstun", -- Cheap Shot
 	[   408] = "ctrlstun", -- Kidney Shot
