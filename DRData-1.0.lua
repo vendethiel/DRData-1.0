@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1013
+local minor = 1014
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -54,17 +54,28 @@ Data.RESET_TIME = 18
 -- List of spellID -> DR category
 Data.spells = {
 	--[[ TAUNT ]]--
-	[   355] = "taunt", -- Taunt (Warrior)
-	[ 53477] = "taunt", -- Taunt (Hunter tenacity pet)
-	[  6795] = "taunt", -- Growl (Druid)
-	[115546] = "taunt", -- Provoke (Monk)
+	-- Death Knight
 	[ 56222] = "taunt", -- Dark Command
-	[ 62124] = "taunt", -- Hand of Reckoning
-	[ 31790] = "taunt", -- Righteous Defense
-	[ 20736] = "taunt", -- Distracting Shot
 	[ 57603] = "taunt", -- Death Grip
-	[ 36213] = "taunt", -- Angered Earth -- FIXME: NPC ability ?
+	-- I have also seen these two spellIDs used for the Death Grip debuff in MoP.
+	-- I have not seen the first one here in any of my MoP testing, but it may still be valid.
+	[ 49560] = "taunt", -- Death Grip
+	[ 51399] = "taunt", -- Death Grip
+	-- Druid
+	[  6795] = "taunt", -- Growl
+	-- Hunter
+	[ 20736] = "taunt", -- Distracting Shot
+	-- Monk
+	[116189] = "taunt", -- Provoke
+	-- Paladin
+	[ 62124] = "taunt", -- Reckoning
+	-- Warlock
 	[ 17735] = "taunt", -- Suffering (Voidwalker)
+	-- Warrior
+	[   355] = "taunt", -- Taunt
+	-- ???
+	[ 36213] = "taunt", -- Angered Earth -- FIXME: NPC ability ?
+	
 
 	--[[ DISORIENTS ]]--
 	-- Druid
@@ -85,7 +96,7 @@ Data.spells = {
     -- Monk
 	[115078] = "disorient", -- Paralysis
     -- Paladin
-	[115750] = "disorient", -- Blinding Light
+	[105421] = "disorient", -- Blinding Light
 	[ 20066] = "disorient", -- Repentance
     -- Priest
 	[  9484] = "disorient", -- Shackle Undead
@@ -101,14 +112,15 @@ Data.spells = {
 	-- Death Knight
 	[ 47476] = "silence", -- Strangulate
     -- Druid
-	[ 78675] = "silence", -- Solar Beam
-	[ 81261] = "silence", -- Solar Beam -- FIXME: check id
+	[ 78675] = "silence", -- Solar Beam -- FIXME: check id
+	[ 81261] = "silence", -- Solar Beam -- Definitely correct
     -- Hunter
 	[ 34490] = "silence", -- Silencing Shot
-	[ 50479] = "silence", -- Nether Shock (Nether ray)
     -- Mage
-	[ 12598] = "silence", -- Improved Counterspell
+	[ 55021] = "silence", -- Improved Counterspell
 	[102051] = "silence", -- Frostjaw (talent)
+    -- Monk
+	[116709] = "silence", -- Spear Hand Strike
     -- Paladin
 	[ 31935] = "silence", -- Avenger's Shield
     -- Priest
@@ -116,9 +128,10 @@ Data.spells = {
     -- Rogue
 	[  1330] = "silence", -- Garrote
     -- Warlock
-	[103135] = "silence", -- Spell Lock (Felhunter)
+	[ 24259] = "silence", -- Spell Lock (Felhunter)
+	[115782] = "silence", -- Optical Blast (Observer)
     -- Warrior
-	[ 18498] = "silence", -- Glyph of Gag Order -- FIXME: check id
+	[ 18498] = "silence", -- Glyph of Gag Order
     -- Blood Elf
 	[ 25046] = "silence", -- Arcane Torrent (Energy version)
 	[ 28730] = "silence", -- Arcane Torrent (Mana version)
@@ -134,11 +147,11 @@ Data.spells = {
 	[117368] = "disarm", -- Grapple Weapon
 	-- Priest
 	[ 64058] = "disarm", -- Psychic Horror (Disarm effect)
-    -- Rogue Dismantle
+    -- Rogue
 	[ 51722] = "disarm", -- Dismantle
     -- Warlock
-	[124539] = "disarm", -- Voidwalker: Disarm
-    -- Warrior Disarm
+	[118093] = "disarm", -- Disarm (Voidwalker/Voidlord)
+    -- Warrior
 	[   676] = "disarm", -- Disarm
 
 	--[[ FEARS ]]--
@@ -148,14 +161,14 @@ Data.spells = {
 	[ 10326] = "fear", -- Turn Evil
     -- Priest
 	[  8122] = "fear", -- Psychic Scream
-	-- [] = "fear", -- Psyfiend Fear (ID ?)
+	[113792] = "fear", -- Psychic Terror (Psyfiend)
     -- Rogue
 	[  2094] = "fear", -- Blind
     -- Warlock
-	[  5782] = "fear", -- Fear (Warlock)
-	[111397] = "fear", -- Blood Fear (talent)
+	[118699] = "fear", -- Fear -- new SpellID in MoP, Blood Fear uses same ID
 	[  5484] = "fear", -- Howl of Terror
 	[  6358] = "fear", -- Seduction (Succubus)
+	[115268] = "fear", -- Mesmerize (Shivarra) -- FIXME: verify this is the correct category
     -- Warrior
 	[  5246] = "fear", -- Intimidating Shout (main target)
 	[ 20511] = "fear", -- Intimidating Shout (secondary targets)
@@ -207,13 +220,13 @@ Data.spells = {
 
 	--[[ RANDOM STUNS ]]--
 	-- Rogue
-	[ 35202] = "rndstun", -- Paralysis (Paralytic Poison five stack stun)
+	[113953] = "rndstun", -- Paralysis (Paralytic Poison five stack stun)
     -- Warrior
-	[118000] = "rndstun", -- Dragon Roar (talent)
+	[118895] = "rndstun", -- Dragon Roar (talent)
 
 	--[[ ROOTS ]]--
 	-- Death Knight
-	[ 50041] = "ctrlroot", -- Chilblains
+	[ 96294] = "ctrlroot", -- Chains of Ice (Chilblains Root)
 	-- Druid
 	[   339] = "ctrlroot", -- Entangling Roots
 	[ 19975] = "ctrlroot", -- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
@@ -226,18 +239,18 @@ Data.spells = {
 	[   122] = "ctrlroot", -- Frost Nova
 	[ 33395] = "ctrlroot", -- Freeze (Water Elemental)
     -- Monk
-	[116095] = "ctrlroot", -- Disable
+	[116706] = "ctrlroot", -- Disable
     -- Priest
-	[108920] = "ctrlroot", -- Void Tendrils
+	[114404] = "ctrlroot", -- Void Tendrils
     -- Shaman
-	[ 51485] = "ctrlroot", -- Earth's Grasp
-	[ 63374] = "ctrlroot", -- Frozen Power
+	[ 64695] = "ctrlroot", -- Earthgrab
+	[ 63685] = "ctrlroot", -- Freeze (Frozen Power talent)
     -- Warrior
-	[107566] = "ctrlroot", -- Staggering Shout
+	[107566] = "ctrlroot", -- Staggering Shout (talent)
 
 	--[[ HORROR ]]--
 	-- Priest
-	[ 64044] = "horror", -- Psychic Horror
+	[ 64044] = "horror", -- Psychic Horror (Horrify effect)
 	-- Warlock
 	[  6789] = "horror", -- Mortal Coil
 
@@ -246,12 +259,12 @@ Data.spells = {
 	[ 33786] = "cyclone",       -- Cyclone
 	-- Hunter
 	[ 19503] = "scatters",      -- Scatter Shot
-	[ 19185] = "entrapment",    -- Entrapment
+	[ 64803] = "entrapment",    -- Entrapment
 	-- Mage
 	[ 31661] = "dragons",       -- Dragon's Breath
-	[111264] = "iceward",       -- Ice Ward
+	[111340] = "iceward",       -- Ice Ward
 	-- Priest
-	[   605] = "mc",            -- Mind Control
+	[   605] = "mc",            -- Dominate Mind
 	-- Shaman
 	[ 76780] = "bindelemental", -- Bind Elemental
 	-- Warlock
@@ -288,7 +301,7 @@ Data.pveDR = {
 	["rndstun"] = true,
 	["taunt"] = true,
 	["cyclone"] = true,
-	["bindelemental"] = true,
+	-- ["bindelemental"] = true, -- Why was this added to pveDR? Just tested and it definitely does not have PvE DR.
 }
 
 -- Public APIs
