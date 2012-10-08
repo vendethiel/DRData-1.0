@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1016
+local minor = 1017
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -169,6 +169,7 @@ Data.spells = {
 	[  5484] = "fear", -- Howl of Terror
 	[  6358] = "fear", -- Seduction (Succubus)
 	[115268] = "fear", -- Mesmerize (Shivarra) -- FIXME: verify this is the correct category
+	[104045] = "fear", -- Sleep (Metamorphosis) -- FIXME: verify this is the correct category
     -- Warrior
 	[  5246] = "fear", -- Intimidating Shout (main target)
 	[ 20511] = "fear", -- Intimidating Shout (secondary targets)
