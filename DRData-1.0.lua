@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1017
+local minor = 1018
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -179,6 +179,7 @@ Data.spells = {
 	[108194] = "ctrlstun", -- Asphyxiate (talent)
 	[ 91800] = "ctrlstun", -- Gnaw (Ghoul)
 	[ 91797] = "ctrlstun", -- Monstrous Blow (Dark Transformation Ghoul)
+	[115001] = "ctrlstun", -- Remorseless Winter (talent)
     -- Druid
 	[ 22570] = "ctrlstun", -- Maim
 	[  9005] = "ctrlstun", -- Pounce
@@ -213,7 +214,7 @@ Data.spells = {
 	-- Warlock
 	[ 30283] = "ctrlstun", -- Shadowfury
 	[ 89766] = "ctrlstun", -- Axe Toss (Felguard)
-	[ 22703] = "ctrlstun", -- Infernal Awakening (Infernal)
+	-- [ 22703] = "ctrlstun", -- Infernal Awakening (Infernal) -- According to the DR thread on AJ, this doesn't have DR at all.
     -- Warrior
 	[132168] = "ctrlstun", -- Shockwave
 	[105771] = "ctrlstun", -- Warbringer (talent)
@@ -225,6 +226,10 @@ Data.spells = {
 	[113953] = "rndstun", -- Paralysis (Paralytic Poison five stack stun)
     -- Warrior
 	[118895] = "rndstun", -- Dragon Roar (talent)
+	-- Shaman
+	[77505] = "rndstun", -- Earthquake Knockdown (Elemental)
+	-- Warlock
+	[85387] = "rndstun", -- Aftermath (Destruction)
 
 	--[[ ROOTS ]]--
 	-- Death Knight
@@ -255,17 +260,20 @@ Data.spells = {
 	--[[ HORROR ]]--
 	-- Priest
 	[ 64044] = "horror", -- Psychic Horror (Horrify effect)
+	[ 87204] = "horror", -- Sin and Punishment (MoP PvP 4 piece)
 	-- Warlock
 	[  6789] = "horror", -- Mortal Coil
 
+	--[[ SCATTERS ]]--
+	[ 19503] = "scatters",      -- Scatter Shot
+	[ 31661] = "scatters",      -- Dragon's Breath
+	
 	--[[ MISC ]]--
 	-- Druid
 	[ 33786] = "cyclone",       -- Cyclone
 	-- Hunter
-	[ 19503] = "scatters",      -- Scatter Shot
 	[ 64803] = "entrapment",    -- Entrapment
 	-- Mage
-	[ 31661] = "dragons",       -- Dragon's Breath
 	[111340] = "iceward",       -- Ice Ward
 	-- Priest
 	[   605] = "mc",            -- Dominate Mind
@@ -274,7 +282,7 @@ Data.spells = {
 	-- Warlock
 	[   710] = "banish",        -- Banish
 	-- Warrior
-	[  7922] = "charge",        -- Charge
+	--[  7922] = "charge",        -- Charge -- according to the DR thread on AJ, this doesn't dr at all anymore.
 }
 
 -- DR Category names
