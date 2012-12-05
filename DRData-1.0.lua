@@ -159,6 +159,7 @@ Data.spells = {
     -- Paladin
 	[105421] = "fear", -- Blinding Light
 	[ 10326] = "fear", -- Turn Evil
+	[105421] = "fear", -- Blinding Light
     -- Priest
 	[  8122] = "fear", -- Psychic Scream
 	[113792] = "fear", -- Psychic Terror (Psyfiend)
