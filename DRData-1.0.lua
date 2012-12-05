@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1018
+local minor = 1019
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -96,7 +96,6 @@ Data.spells = {
     -- Monk
 	[115078] = "disorient", -- Paralysis
     -- Paladin
-	[105421] = "disorient", -- Blinding Light
 	[ 20066] = "disorient", -- Repentance
     -- Priest
 	[  9484] = "disorient", -- Shackle Undead
@@ -158,6 +157,7 @@ Data.spells = {
 	-- Hunter
 	[  1513] = "fear", -- Scare Beast
     -- Paladin
+	[105421] = "fear", -- Blinding Light
 	[ 10326] = "fear", -- Turn Evil
     -- Priest
 	[  8122] = "fear", -- Psychic Scream
@@ -204,6 +204,7 @@ Data.spells = {
 	[   853] = "ctrlstun", -- Hammer of Justice
 	[119072] = "ctrlstun", -- Holy Wrath (Protection)
 	[105593] = "ctrlstun", -- Fist of Justice (talent)
+	[ 54934] = "ctrlstun", -- Glyph of Blinding light -- FIXME: not sure about the spell ID
     -- Priest
 	-- [ 88625] = "ctrlstun", -- Holy Word: Chastise --FIXME: this doesn't share with ctrlstun anymore. Unknown what it is right now, so watch for it on www.arenajunkies.com/topic/227748-mop-diminishing-returns-updating-the-list
     -- Rogue
