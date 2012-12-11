@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1019
+local minor = 1020
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -104,6 +104,9 @@ Data.spells = {
 	[  6770] = "disorient", -- Sap
     -- Shaman
 	[ 51514] = "disorient", -- Hex
+    -- Warlock
+	[  6358] = "fear", -- Seduction (Succubus)
+	[115268] = "fear", -- Mesmerize (Shivarra)
     -- Pandaren
 	[107079] = "disorient", -- Quaking Palm
 
@@ -159,7 +162,6 @@ Data.spells = {
     -- Paladin
 	[105421] = "fear", -- Blinding Light
 	[ 10326] = "fear", -- Turn Evil
-	[105421] = "fear", -- Blinding Light
     -- Priest
 	[  8122] = "fear", -- Psychic Scream
 	[113792] = "fear", -- Psychic Terror (Psyfiend)
@@ -168,8 +170,6 @@ Data.spells = {
     -- Warlock
 	[118699] = "fear", -- Fear -- new SpellID in MoP, Blood Fear uses same ID
 	[  5484] = "fear", -- Howl of Terror
-	[  6358] = "fear", -- Seduction (Succubus)
-	[115268] = "fear", -- Mesmerize (Shivarra) -- FIXME: verify this is the correct category
 	[104045] = "fear", -- Sleep (Metamorphosis) -- FIXME: verify this is the correct category
     -- Warrior
 	[  5246] = "fear", -- Intimidating Shout (main target)
