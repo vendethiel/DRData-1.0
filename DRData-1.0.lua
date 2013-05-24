@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1019
+local minor = 1022
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -113,6 +113,8 @@ Data.spells = {
     -- Druid
 	[ 78675] = "silence", -- Solar Beam -- FIXME: check id
 	[ 81261] = "silence", -- Solar Beam -- Definitely correct
+	[113286] = "silence", -- Solar Beam (Symbiosis)
+	[113287] = "silence", -- Solar Beam (Symbiosis)
     -- Hunter
 	[ 34490] = "silence", -- Silencing Shot
     -- Mage
@@ -144,6 +146,7 @@ Data.spells = {
 	[ 50541] = "disarm", -- Clench (Scorpid)
     -- Monk
 	[117368] = "disarm", -- Grapple Weapon
+	[126458] = "disarm", -- Grapple Weapon (Symbiosis)
 	-- Priest
 	[ 64058] = "disarm", -- Psychic Horror (Disarm effect)
     -- Rogue
@@ -159,7 +162,6 @@ Data.spells = {
     -- Paladin
 	[105421] = "fear", -- Blinding Light
 	[ 10326] = "fear", -- Turn Evil
-	[105421] = "fear", -- Blinding Light
     -- Priest
 	[  8122] = "fear", -- Psychic Scream
 	[113792] = "fear", -- Psychic Terror (Psyfiend)
@@ -168,12 +170,14 @@ Data.spells = {
     -- Warlock
 	[118699] = "fear", -- Fear -- new SpellID in MoP, Blood Fear uses same ID
 	[  5484] = "fear", -- Howl of Terror
-	[  6358] = "fear", -- Seduction (Succubus)
-	[115268] = "fear", -- Mesmerize (Shivarra) -- FIXME: verify this is the correct category
 	[104045] = "fear", -- Sleep (Metamorphosis) -- FIXME: verify this is the correct category
+	[  6358] = "fear", -- Seduction (Succubus)
+	[115268] = "fear", -- Mesmerize (Shivarra)
     -- Warrior
 	[  5246] = "fear", -- Intimidating Shout (main target)
 	[ 20511] = "fear", -- Intimidating Shout (secondary targets)
+	[113004] = "fear", -- Intimidating Roar (Symbiosis)
+	[113056] = "fear", -- Intimidating Roar (Symbiosis)
 
 	--[[ CONTROL STUNS ]]--
 	-- Death Knight
@@ -204,9 +208,10 @@ Data.spells = {
 	[120086] = "ctrlstun", -- Fists of Fury (Windwalker)
     -- Paladin
 	[   853] = "ctrlstun", -- Hammer of Justice
+	[110698] = "ctrlstun", -- Hammer of Justice (Symbiosis)
 	[119072] = "ctrlstun", -- Holy Wrath (Protection)
 	[105593] = "ctrlstun", -- Fist of Justice (talent)
-	[ 54934] = "ctrlstun", -- Glyph of Blinding light -- FIXME: not sure about the spell ID
+	[115752] = "ctrlstun", -- Glyph of Blinding Light
     -- Priest
 	-- [ 88625] = "ctrlstun", -- Holy Word: Chastise --FIXME: this doesn't share with ctrlstun anymore. Unknown what it is right now, so watch for it on www.arenajunkies.com/topic/227748-mop-diminishing-returns-updating-the-list
     -- Rogue
@@ -239,6 +244,7 @@ Data.spells = {
 	[ 96294] = "ctrlroot", -- Chains of Ice (Chilblains Root)
 	-- Druid
 	[   339] = "ctrlroot", -- Entangling Roots
+	[113275] = "ctrlroot", -- Entangling Roots (Symbiosis)
 	[ 19975] = "ctrlroot", -- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
 	[102359] = "ctrlroot", -- Mass Entanglement (talent)
     -- Hunter
@@ -249,6 +255,7 @@ Data.spells = {
 	[128405] = "ctrlroot", -- Narrow Escape (talent)
     -- Mage
 	[   122] = "ctrlroot", -- Frost Nova
+	[110693] = "ctrlroot", -- Frost Nova (Symbiosis)
 	[ 33395] = "ctrlroot", -- Freeze (Water Elemental)
     -- Monk
 	[116706] = "ctrlroot", -- Disable
@@ -274,6 +281,7 @@ Data.spells = {
 	--[[ MISC ]]--
 	-- Druid
 	[ 33786] = "cyclone",       -- Cyclone
+	[113506] = "cyclone",       -- Cyclone (Symbiosis)
 	-- Hunter
 	[ 64803] = "entrapment",    -- Entrapment
 	-- Mage
