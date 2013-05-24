@@ -193,6 +193,7 @@ Data.spells = {
 	[ 50519] = "ctrlstun", -- Sonic Blast (Bat)
 	-- [ 56626] = "ctrlstun", -- Sting (Wasp) --FIXME: this doesn't share with ctrlstun anymore. Unknown what it is right now, so watch for it on www.arenajunkies.com/topic/227748-mop-diminishing-returns-updating-the-list
 	[117526] = "ctrlstun", -- Binding Shot (talent)
+	[ 96201] = "ctrlstun", -- Web Wrap (Shale Spider)
     -- Mage
 	[ 44572] = "ctrlstun", -- Deep Freeze
 	[118271] = "ctrlstun", -- Combustion Impact (Combustion; Fire)
