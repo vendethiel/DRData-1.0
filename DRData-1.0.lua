@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1023
+local minor = 1024
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -162,6 +162,7 @@ Data.spells = {
     -- Paladin
 	[105421] = "fear", -- Blinding Light
 	[ 10326] = "fear", -- Turn Evil
+	[145067] = "fear", -- Turn Evil (Evil is a Point of View talent)
     -- Priest
 	[  8122] = "fear", -- Psychic Scream
 	[113792] = "fear", -- Psychic Terror (Psyfiend)
