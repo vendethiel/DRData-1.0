@@ -10,7 +10,8 @@ local L = {
 	["Controlled stuns"] = "Controlled stuns",
 	["Cyclone"] = "Cyclone",
 	["Disarms"] = "Disarms",
-	["Disorients"] = "Disorients",
+	["Mesmerizes"] = "Mesmerizes",
+	["Mesmerizes (short)"] = "Mesmerizes (short)",
 	["Fears"] = "Fears",
 	["Horrors"] = "Horrors",
 	["Mind Control"] = "Mind Control",
@@ -26,7 +27,8 @@ if GetLocale() == "frFR" then
 	L["Controlled stuns"] = "Etourdissements"
 	L["Cyclone"] = "Cyclone"
 	L["Disarms"] = "Désarmements"
-	L["Disorients"] = "Désorientations"
+	L["Mesmerizes"] = "Désorientations",
+	L["Mesmerizes (short)"] = "Désorientations (courtes)",
 	L["Fears"] = "Peurs"
 	L["Horrors"] = "Horreurs"
 	L["Mind Control"] = "Contrôle mental"
@@ -66,11 +68,12 @@ Data.spells = {
 	-- ???
 	[ 36213] = "taunt", -- Angered Earth -- FIXME: NPC ability ?
 
+	--[[ MESMERIZES ]]--
+	-- Note: reuse the previously-used "disorient" category to avoid breaking addons
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#4
 
-	--[[ DISORIENTS ]]--
 	-- Druid
 	[  2637] = "disorient", -- Hibernate
-	[    99] = "disorient", -- Disorienting Roar (talent)
 	-- Hunter
 	[  3355] = "disorient", -- Freezing Trap
 	[ 19386] = "disorient", -- Wyvern Sting
@@ -93,9 +96,27 @@ Data.spells = {
 	[  1776] = "disorient", -- Gouge
 	[  6770] = "disorient", -- Sap
 	-- Shaman
+	[ 76780] = "disorient", -- Bind Elemental
 	[ 51514] = "disorient", -- Hex
+	-- Warlock
+	[   710] = "disorient", -- Banish
 	-- Pandaren
 	[107079] = "disorient", -- Quaking Palm
+
+	--[[ SHORT MESMERIZES ]]--
+	-- Note: this category does not share diminishing returns with the above Mesmerize category.
+	-- Called "Mesmerize". http://us.battle.net/wow/en/forum/topic/10195910192#4
+
+	-- Druid
+	[    99] = "shortdisorient", -- Disorienting Roar (talent)
+	-- Hunter
+	[ 19503] = "shortdisorient", -- Scatter Shot
+	-- Mage
+	[ 31661] = "shortdisorient", -- Dragon's Breath
+	-- Monk
+	[123394] = "shortdisorient", -- Breath of Fire (Glyphed) -- ID NEED CONFIRMATION
+	-- Priest
+	[ 88625] = "shortdisorient", -- Holy Word: Chastise
 
 	--[[ SILENCES ]]--
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#6
@@ -209,8 +230,6 @@ Data.spells = {
 	[119072] = "ctrlstun", -- Holy Wrath (Protection)
 	[105593] = "ctrlstun", -- Fist of Justice (talent)
 	[115752] = "ctrlstun", -- Glyph of Blinding Light
-	-- Priest
-	-- [ 88625] = "ctrlstun", -- Holy Word: Chastise --FIXME: this doesn't share with ctrlstun anymore. Unknown what it is right now, so watch for it on www.arenajunkies.com/topic/227748-mop-diminishing-returns-updating-the-list
 	-- Rogue
 	[  1833] = "ctrlstun", -- Cheap Shot
 	[   408] = "ctrlstun", -- Kidney Shot
@@ -323,7 +342,8 @@ Data.categoryNames = {
 	["ctrlstun"] = L["Controlled stuns"],
 	["cyclone"] = L["Cyclone"],
 	["disarm"] = L["Disarms"],
-	["disorient"] = L["Disorients"],
+	["disorient"] = L["Mesmerizes"],
+	["shortdisorient"] = L["Mesmerizes (short)"],
 	["fear"] = L["Fears"],
 	["horror"] = L["Horrors"],
 	["mc"] = L["Mind Control"],
