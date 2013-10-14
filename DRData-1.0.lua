@@ -27,8 +27,8 @@ if GetLocale() == "frFR" then
 	L["Stuns"] = "Etourdissements"
 	L["Cyclone"] = "Cyclone"
 	L["Disarms"] = "Désarmements"
-	L["Mesmerizes"] = "Désorientations",
-	L["Mesmerizes (short)"] = "Désorientations (courtes)",
+	L["Mesmerizes"] = "Désorientations"
+	L["Mesmerizes (short)"] = "Désorientations (courtes)"
 	L["Fears"] = "Peurs"
 	L["Horrors"] = "Horreurs"
 	L["Mind Control"] = "Contrôle mental"
