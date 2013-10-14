@@ -98,19 +98,20 @@ Data.spells = {
 	[107079] = "disorient", -- Quaking Palm
 
 	--[[ SILENCES ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#6
+
 	-- Death Knight
+	[] = "silence", -- Asphyxiate (if target is immune to stun)
 	[ 47476] = "silence", -- Strangulate
 	-- Druid
-	[ 78675] = "silence", -- Solar Beam -- FIXME: check id
-	[ 81261] = "silence", -- Solar Beam -- Definitely correct
-	[113286] = "silence", -- Solar Beam (Symbiosis)
-	[113287] = "silence", -- Solar Beam (Symbiosis)
+	[] = "silence", -- Glyph of Fae Silence
 	-- Hunter
 	[ 34490] = "silence", -- Silencing Shot
 	-- Mage
-	[ 55021] = "silence", -- Improved Counterspell
-	[102051] = "silence", -- Frostjaw (talent)
+	[102051] = "silence", -- Frostjaw
+	[ 55021] = "silence", -- Counterspell
 	-- Monk
+	[137460] = "silence", -- Ring of Peace (Silence effect)
 	[116709] = "silence", -- Spear Hand Strike
 	-- Paladin
 	[ 31935] = "silence", -- Avenger's Shield
@@ -119,10 +120,8 @@ Data.spells = {
 	-- Rogue
 	[  1330] = "silence", -- Garrote
 	-- Warlock
-	[ 24259] = "silence", -- Spell Lock (Felhunter)
+	[ 24259] = "silence", -- Spell Lock (Fel Hunter)
 	[115782] = "silence", -- Optical Blast (Observer)
-	-- Warrior
-	[ 18498] = "silence", -- Glyph of Gag Order
 	-- Blood Elf
 	[ 25046] = "silence", -- Arcane Torrent (Energy version)
 	[ 28730] = "silence", -- Arcane Torrent (Mana version)
