@@ -25,6 +25,7 @@ local L = {
 	["Silences"] = "Silences",
 	["Taunts"] = "Taunts",
 	["Roots (short)"] = "Roots (short)",
+	["Knockbacks"] = "Knockbacks",
 }
 
 if GetLocale() == "frFR" then
@@ -47,6 +48,7 @@ if GetLocale() == "frFR" then
 	L["Silences"] = "Silences"
 	L["Taunts"] = "Provocations"
 	L["Roots (short)"] = "Immobilisations (courtes)"
+	L["Knockbacks"] = "Projections"
 end
 
 -- How long before DR resets
@@ -315,6 +317,23 @@ Data.spells = {
 	[   710] = "banish",        -- Banish
 	-- Warrior
 	--[  7922] = "charge",        -- Charge -- according to the DR thread on AJ, this doesn't dr at all anymore.
+
+	--[[ KNOCKBACK ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#8
+
+	-- Death Knight
+	[108199] = "knockback", -- Gorefiend's Grasp
+	-- Druid
+	[102793] = "knockback", -- Ursol's Vortex
+	[132469] = "knockback", -- Typhoon
+	-- Hunter
+	[119403] = "knockback", -- Glyph of Explosive Trap
+	-- Shaman
+	[ 51490] = "knockback", -- Thunderstormo
+	-- Warlock
+	[  6360] = "knockback", -- Whiplash
+	[115770] = "knockback", -- Fellash
+
 }
 
 -- DR Category names
@@ -338,6 +357,7 @@ Data.categoryNames = {
 	["scatters"] = L["Scatter Shot"],
 	["silence"] = L["Silences"],
 	["taunt"] = L["Taunts"],
+	["knockback"] = L["Knockbacks"], -- NEEDS PROPER TESTING WITH DEPENDENT ADDONS
 }
 
 -- Categories that have DR in PvE as well as PvP
