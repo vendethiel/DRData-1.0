@@ -7,7 +7,7 @@ if( not Data ) then return end
 
 local L = {
 	["Roots"] = "Roots",
-	["Controlled stuns"] = "Controlled stuns",
+	["Stuns"] = "Stuns",
 	["Cyclone"] = "Cyclone",
 	["Disarms"] = "Disarms",
 	["Mesmerizes"] = "Mesmerizes",
@@ -15,7 +15,7 @@ local L = {
 	["Fears"] = "Fears",
 	["Horrors"] = "Horrors",
 	["Mind Control"] = "Mind Control",
-	["Random stuns"] = "Random stuns",
+	["Stuns (short)"] = "Stuns (short)",
 	["Silences"] = "Silences",
 	["Taunts"] = "Taunts",
 	["Roots (short)"] = "Roots (short)",
@@ -24,7 +24,7 @@ local L = {
 
 if GetLocale() == "frFR" then
 	L["Roots"] = "Immobilisations"
-	L["Controlled stuns"] = "Etourdissements"
+	L["Stuns"] = "Etourdissements"
 	L["Cyclone"] = "Cyclone"
 	L["Disarms"] = "Désarmements"
 	L["Mesmerizes"] = "Désorientations",
@@ -32,7 +32,7 @@ if GetLocale() == "frFR" then
 	L["Fears"] = "Peurs"
 	L["Horrors"] = "Horreurs"
 	L["Mind Control"] = "Contrôle mental"
-	L["Random stuns"] = "Etourdissemensts aléatoires"
+	L["Stuns (short)"] = "Etourdissements (courts)"
 	L["Silences"] = "Silences"
 	L["Taunts"] = "Provocations"
 	L["Roots (short)"] = "Immobilisations (courtes)"
@@ -197,63 +197,74 @@ Data.spells = {
 	[  5246] = "fear", -- Intimidating Shout (main target)
 	[ 20511] = "fear", -- Intimidating Shout (secondary targets)
 
-	--[[ CONTROL STUNS ]]--
+	--[[ STUNS ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#3
+
 	-- Death Knight
-	[108194] = "ctrlstun", -- Asphyxiate (talent)
+	[108194] = "ctrlstun", -- Asphyxiate
 	[ 91800] = "ctrlstun", -- Gnaw (Ghoul)
 	[ 91797] = "ctrlstun", -- Monstrous Blow (Dark Transformation Ghoul)
-	[115001] = "ctrlstun", -- Remorseless Winter (talent)
+	[115001] = "ctrlstun", -- Remorseless Winter
 	-- Druid
-	[ 22570] = "ctrlstun", -- Maim
-	[  9005] = "ctrlstun", -- Pounce
-	[  5211] = "ctrlstun", -- Mighty Bash (talent)
 	[102795] = "ctrlstun", -- Bear Hug
+	[ 22570] = "ctrlstun", -- Maim
+	[  5211] = "ctrlstun", -- Mighty Bash
+	[  9005] = "ctrlstun", -- Pounce
 	[113801] = "ctrlstun", -- Bash (treants in feral spec) (Bugged by blizzard - it instantly applies all 3 levels of DR right now, making any target instantly immune to ctrlstuns)
 	-- Hunter
+	[117526] = "ctrlstun", -- Binding Shot
 	[ 24394] = "ctrlstun", -- Intimidation
-	[ 90337] = "ctrlstun", -- Bad Manner (Monkey)
-	[ 50519] = "ctrlstun", -- Sonic Blast (Bat)
-	-- [ 56626] = "ctrlstun", -- Sting (Wasp) --FIXME: this doesn't share with ctrlstun anymore. Unknown what it is right now, so watch for it on www.arenajunkies.com/topic/227748-mop-diminishing-returns-updating-the-list
-	[117526] = "ctrlstun", -- Binding Shot (talent)
-	[ 96201] = "ctrlstun", -- Web Wrap (Shale Spider)
+	[ 90337] = "ctrlstun", -- Bad Manner (Monkey pet)
+	[126246] = "ctrlstun", -- Lullaby (Crane pet) -- ID NEED CONFIRMATION
+	[126423] = "ctrlstun", -- Petrifying Gaze (Basilisk pet) -- ID NEED CONFIRMATION
+	[126355] = "ctrlstun", -- Quill (Porcupine pet) -- ID NEED CONFIRMATION
+	[ 56626] = "ctrlstun", -- Sting (Wasp pet)
+	[ 50519] = "ctrlstun", -- Sonic Blast (Bat pet)
+	[ 96201] = "ctrlstun", -- Web Wrap (Shale Spider pet)
 	-- Mage
+	[118271] = "ctrlstun", -- Combustion
 	[ 44572] = "ctrlstun", -- Deep Freeze
-	[118271] = "ctrlstun", -- Combustion Impact (Combustion; Fire)
 	-- Monk
-	[119392] = "ctrlstun", -- Charging Ox Wave (talent)
-	[119381] = "ctrlstun", -- Leg Sweep (talent)
-	[122242] = "ctrlstun", -- Clash (Brewmaster)
-	[120086] = "ctrlstun", -- Fists of Fury (Windwalker)
+	[119392] = "ctrlstun", -- Charging Ox Wave
+	[122242] = "ctrlstun", -- Clash
+	[120086] = "ctrlstun", -- Fists of Fury
+	[119381] = "ctrlstun", -- Leg Sweep
 	-- Paladin
+	[115752] = "ctrlstun", -- Blinding Light (Glyphed)
 	[   853] = "ctrlstun", -- Hammer of Justice
 	[110698] = "ctrlstun", -- Hammer of Justice (Symbiosis)
-	[119072] = "ctrlstun", -- Holy Wrath (Protection)
-	[105593] = "ctrlstun", -- Fist of Justice (talent)
-	[115752] = "ctrlstun", -- Glyph of Blinding Light
+	[119072] = "ctrlstun", -- Holy Wrath
+	[105593] = "ctrlstun", -- Fist of Justice
 	-- Rogue
 	[  1833] = "ctrlstun", -- Cheap Shot
 	[   408] = "ctrlstun", -- Kidney Shot
 	-- Shaman
+	[118345] = "ctrlstun", -- Pulverize (Primal Earth Elemental)
 	[118905] = "ctrlstun", -- Static Charge (Capacitor Totem)
 	-- Warlock
-	[ 30283] = "ctrlstun", -- Shadowfury
 	[ 89766] = "ctrlstun", -- Axe Toss (Felguard)
-	-- [ 22703] = "ctrlstun", -- Infernal Awakening (Infernal) -- According to the DR thread on AJ, this doesn't have DR at all.
+	[ 30283] = "ctrlstun", -- Shadowfury
+	[ 22703] = "ctrlstun", -- Summon Infernal
 	-- Warrior
 	[132168] = "ctrlstun", -- Shockwave
-	[105771] = "ctrlstun", -- Warbringer (talent)
+	[107570] = "ctrlstun", -- Storm Bolt
 	-- Tauren
 	[ 20549] = "ctrlstun", -- War Stomp
 
-	--[[ RANDOM STUNS ]]--
+	--[[ SHORT STUNS ]]--
+	-- cf.  http://us.battle.net/wow/en/forum/topic/10195910192#3
+	-- Notes: 1. this category does not share diminishing returns with the above Stuns category.
+	-- 2. Reuse the previously-used "rndstun" category to avoid breaking addons.
+
 	-- Rogue
-	[113953] = "rndstun", -- Paralysis (Paralytic Poison five stack stun)
+	[113953] = "rndstun", -- Paralytic Poison
 	-- Warrior
 	[118895] = "rndstun", -- Dragon Roar (talent)
 	-- Shaman
-	[77505] = "rndstun", -- Earthquake Knockdown (Elemental)
-	-- Warlock
-	[85387] = "rndstun", -- Aftermath (Destruction)
+	[ 77505] = "rndstun", -- Earthquake
+	-- Warrior
+	[   100] = "rndstun", -- Charge
+	[118000] = "rndstun", -- Dragon Roar
 
 	--[[ ROOTS ]]--
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
@@ -339,7 +350,7 @@ Data.spells = {
 Data.categoryNames = {
 	["ctrlroot"] = L["Roots"],
 	["shortroot"] = L["Roots (short)"],
-	["ctrlstun"] = L["Controlled stuns"],
+	["ctrlstun"] = L["Stuns"],
 	["cyclone"] = L["Cyclone"],
 	["disarm"] = L["Disarms"],
 	["disorient"] = L["Mesmerizes"],
@@ -347,7 +358,7 @@ Data.categoryNames = {
 	["fear"] = L["Fears"],
 	["horror"] = L["Horrors"],
 	["mc"] = L["Mind Control"],
-	["rndstun"] = L["Random stuns"],
+	["rndstun"] = L["Stuns (short)"],
 	["silence"] = L["Silences"],
 	["taunt"] = L["Taunts"],
 	["knockback"] = L["Knockbacks"], -- NEEDS PROPER TESTING WITH DEPENDENT ADDONS
