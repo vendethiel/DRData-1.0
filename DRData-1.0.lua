@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1024
+local minor = 1025
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -24,6 +24,7 @@ local L = {
 	["Scatter Shot"] = "Scatter Shot",
 	["Silences"] = "Silences",
 	["Taunts"] = "Taunts",
+	["Roots (short)"] = "Roots (short)",
 }
 
 if GetLocale() == "frFR" then
@@ -45,6 +46,7 @@ if GetLocale() == "frFR" then
 	L["Scatter Shot"] = "Flèche de dispersion"
 	L["Silences"] = "Silences"
 	L["Taunts"] = "Provocations"
+	L["Roots (short)"] = "Immobilisations (courtes)"
 end
 
 -- How long before DR resets
@@ -273,7 +275,19 @@ Data.spells = {
 	-- Warrior
 	[107566] = "ctrlroot", -- Staggering Shout (talent)
 
-	-- [ 64695] = "ctrlroot", -- Earthgrab
+	--[[ SHORT ROOTS ]]--
+	-- Note: this category does not share diminishing returns with the above Roots category.
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
+
+	-- Hunter
+	[ 64803] = "shortroot", -- Entrapment
+	-- Mage
+	[111264] = "shortroot", -- Ice Ward -- ID NEED CONFIRMATION
+	-- Monk
+	[115073] = "shortroot", -- Spinning Fire Blossom -- ID NEED CONFIRMATION
+	-- Shaman
+	[ 64695] = "shortroot", -- Earthgrab Totem
+
 	--[[ HORROR ]]--
 	-- Priest
 	[ 64044] = "horror", -- Psychic Horror (Horrify effect)
@@ -309,6 +323,7 @@ Data.categoryNames = {
 	["bindelemental"] = L["Bind Elemental"],
 	["charge"] = L["Charge"],
 	["ctrlroot"] = L["Roots"],
+	["shortroot"] = L["Roots (short)"],
 	["ctrlstun"] = L["Controlled stuns"],
 	["cyclone"] = L["Cyclone"],
 	["disarm"] = L["Disarms"],
