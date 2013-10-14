@@ -149,28 +149,32 @@ Data.spells = {
 	[   676] = "disarm", -- Disarm
 
 	--[[ FEARS ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#5
+
+	-- Druid
+	[113004] = "fear", -- Intimidating Roar (Symbiosis)
+	[113056] = "fear", -- Intimidating Roar (Symbiosis)
 	-- Hunter
 	[  1513] = "fear", -- Scare Beast
 	-- Paladin
 	[105421] = "fear", -- Blinding Light
 	[ 10326] = "fear", -- Turn Evil
-	[145067] = "fear", -- Turn Evil (Evil is a Point of View talent)
+	[145067] = "fear", -- Turn Evil (Evil is a Point of View)
 	-- Priest
 	[  8122] = "fear", -- Psychic Scream
 	[113792] = "fear", -- Psychic Terror (Psyfiend)
 	-- Rogue
 	[  2094] = "fear", -- Blind
 	-- Warlock
+	[  5782] = "fear", -- Fear
 	[118699] = "fear", -- Fear -- new SpellID in MoP, Blood Fear uses same ID
 	[  5484] = "fear", -- Howl of Terror
-	[104045] = "fear", -- Sleep (Metamorphosis) -- FIXME: verify this is the correct category
-	[  6358] = "fear", -- Seduction (Succubus)
 	[115268] = "fear", -- Mesmerize (Shivarra)
+	[  6358] = "fear", -- Seduction (Succubus)
+--	[104045] = "fear", -- Sleep (Metamorphosis) -- FIXME: verify this is the correct category
 	-- Warrior
 	[  5246] = "fear", -- Intimidating Shout (main target)
 	[ 20511] = "fear", -- Intimidating Shout (secondary targets)
-	[113004] = "fear", -- Intimidating Roar (Symbiosis)
-	[113056] = "fear", -- Intimidating Roar (Symbiosis)
 
 	--[[ CONTROL STUNS ]]--
 	-- Death Knight
@@ -279,10 +283,11 @@ Data.spells = {
 	[ 64695] = "shortroot", -- Earthgrab Totem
 
 	--[[ HORROR ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#5
 	-- Priest
-	[ 64044] = "horror", -- Psychic Horror (Horrify effect)
-	[ 87204] = "horror", -- Sin and Punishment (MoP PvP 4 piece)
+	[ 64044] = "horror", -- Psychic Horror (Horror effect)
 	-- Warlock
+	[111397] = "horror", -- Blood Horror
 	[  6789] = "horror", -- Mortal Coil
 
 	--[[ MISC ]]--
