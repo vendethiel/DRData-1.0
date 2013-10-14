@@ -6,22 +6,15 @@ local Data = LibStub:NewLibrary(major, minor)
 if( not Data ) then return end
 
 local L = {
-	["Banish"] = "Banish",
-	["Bind Elemental"] = "Bind Elemental",
-	["Charge"] = "Charge",
 	["Roots"] = "Roots",
 	["Controlled stuns"] = "Controlled stuns",
 	["Cyclone"] = "Cyclone",
 	["Disarms"] = "Disarms",
 	["Disorients"] = "Disorients",
-	["Dragon's Breath"] = "Dragon's Breath",
-	["Entrapment"] = "Entrapment",
 	["Fears"] = "Fears",
 	["Horrors"] = "Horrors",
-	["Ice Ward"] = "Ice Ward",
 	["Mind Control"] = "Mind Control",
 	["Random stuns"] = "Random stuns",
-	["Scatter Shot"] = "Scatter Shot",
 	["Silences"] = "Silences",
 	["Taunts"] = "Taunts",
 	["Roots (short)"] = "Roots (short)",
@@ -29,22 +22,15 @@ local L = {
 }
 
 if GetLocale() == "frFR" then
-	L["Banish"] = "Bannissement"
-	L["Bind Elemental"] = "Lier un élémentaire"
-	L["Charge"] = "Charge"
 	L["Roots"] = "Immobilisations"
 	L["Controlled stuns"] = "Etourdissements"
 	L["Cyclone"] = "Cyclone"
 	L["Disarms"] = "Désarmements"
 	L["Disorients"] = "Désorientations"
-	L["Dragon's Breath"] = "Souffle du dragon"
-	L["Entrapment"] = "Piège"
 	L["Fears"] = "Peurs"
 	L["Horrors"] = "Horreurs"
-	L["Ice Ward"] = "Garde glaciale"
 	L["Mind Control"] = "Contrôle mental"
 	L["Random stuns"] = "Etourdissemensts aléatoires"
-	L["Scatter Shot"] = "Flèche de dispersion"
 	L["Silences"] = "Silences"
 	L["Taunts"] = "Provocations"
 	L["Roots (short)"] = "Immobilisations (courtes)"
@@ -297,26 +283,13 @@ Data.spells = {
 	-- Warlock
 	[  6789] = "horror", -- Mortal Coil
 
-	--[[ SCATTERS ]]--
-	[ 19503] = "scatters",      -- Scatter Shot
-	[ 31661] = "scatters",      -- Dragon's Breath
-
 	--[[ MISC ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#9
 	-- Druid
 	[ 33786] = "cyclone",       -- Cyclone
 	[113506] = "cyclone",       -- Cyclone (Symbiosis)
-	-- Hunter
-	[ 64803] = "entrapment",    -- Entrapment
-	-- Mage
-	[111340] = "iceward",       -- Ice Ward
 	-- Priest
 	[   605] = "mc",            -- Dominate Mind
-	-- Shaman
-	[ 76780] = "bindelemental", -- Bind Elemental
-	-- Warlock
-	[   710] = "banish",        -- Banish
-	-- Warrior
-	--[  7922] = "charge",        -- Charge -- according to the DR thread on AJ, this doesn't dr at all anymore.
 
 	--[[ KNOCKBACK ]]--
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#8
@@ -338,23 +311,16 @@ Data.spells = {
 
 -- DR Category names
 Data.categoryNames = {
-	["banish"] = L["Banish"],
-	["bindelemental"] = L["Bind Elemental"],
-	["charge"] = L["Charge"],
 	["ctrlroot"] = L["Roots"],
 	["shortroot"] = L["Roots (short)"],
 	["ctrlstun"] = L["Controlled stuns"],
 	["cyclone"] = L["Cyclone"],
 	["disarm"] = L["Disarms"],
 	["disorient"] = L["Disorients"],
-	["dragons"] = L["Dragon's Breath"],
-	["entrapment"] = L["Entrapment"],
 	["fear"] = L["Fears"],
 	["horror"] = L["Horrors"],
-	["iceward"]= L["Ice Ward"],
 	["mc"] = L["Mind Control"],
 	["rndstun"] = L["Random stuns"],
-	["scatters"] = L["Scatter Shot"],
 	["silence"] = L["Silences"],
 	["taunt"] = L["Taunts"],
 	["knockback"] = L["Knockbacks"], -- NEEDS PROPER TESTING WITH DEPENDENT ADDONS
