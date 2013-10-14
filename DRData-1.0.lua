@@ -122,10 +122,10 @@ Data.spells = {
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#6
 
 	-- Death Knight
-	[] = "silence", -- Asphyxiate (if target is immune to stun)
+	[108194] = "silence", -- Asphyxiate (if target is immune to stun)
 	[ 47476] = "silence", -- Strangulate
 	-- Druid
-	[] = "silence", -- Glyph of Fae Silence
+	[114237] = "silence", -- Glyph of Fae Silence
 	-- Hunter
 	[ 34490] = "silence", -- Silencing Shot
 	-- Mage
