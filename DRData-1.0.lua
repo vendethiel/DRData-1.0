@@ -131,12 +131,15 @@ Data.spells = {
 	[ 80483] = "silence", -- Arcane Torrent (Focus version)
 
 	--[[ DISARMS ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#7
+
 	-- Hunter
-	[ 91644] = "disarm", -- Snatch (Bird of Prey)
-	[ 50541] = "disarm", -- Clench (Scorpid)
+	[ 50541] = "disarm", -- Clench (Scorpid pet)
+	[ 91644] = "disarm", -- Snatch (Bird of Prey pet)
 	-- Monk
 	[117368] = "disarm", -- Grapple Weapon
 	[126458] = "disarm", -- Grapple Weapon (Symbiosis)
+	[137461] = "disarm", -- Ring of Peace (Disarm effect)
 	-- Priest
 	[ 64058] = "disarm", -- Psychic Horror (Disarm effect)
 	-- Rogue
