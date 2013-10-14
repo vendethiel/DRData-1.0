@@ -9,7 +9,7 @@ local L = {
 	["Banish"] = "Banish",
 	["Bind Elemental"] = "Bind Elemental",
 	["Charge"] = "Charge",
-	["Controlled roots"] = "Controlled roots",
+	["Roots"] = "Roots",
 	["Controlled stuns"] = "Controlled stuns",
 	["Cyclone"] = "Cyclone",
 	["Disarms"] = "Disarms",
@@ -30,7 +30,7 @@ if GetLocale() == "frFR" then
 	L["Banish"] = "Bannissement"
 	L["Bind Elemental"] = "Lier un élémentaire"
 	L["Charge"] = "Charge"
-	L["Controlled roots"] = "Immobilisations"
+	L["Roots"] = "Immobilisations"
 	L["Controlled stuns"] = "Etourdissements"
 	L["Cyclone"] = "Cyclone"
 	L["Disarms"] = "Désarmements"
@@ -241,6 +241,8 @@ Data.spells = {
 	[85387] = "rndstun", -- Aftermath (Destruction)
 
 	--[[ ROOTS ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
+
 	-- Death Knight
 	[ 96294] = "ctrlroot", -- Chains of Ice (Chilblains Root)
 	-- Druid
@@ -248,26 +250,30 @@ Data.spells = {
 	[113275] = "ctrlroot", -- Entangling Roots (Symbiosis)
 	[ 19975] = "ctrlroot", -- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
 	[102359] = "ctrlroot", -- Mass Entanglement (talent)
-    -- Hunter
+	-- Hunter
+	[ 53148] = "ctrlroot", -- Charge (Tenacity pet)
 	[ 50245] = "ctrlroot", -- Pin (Crab)
 	[  4167] = "ctrlroot", -- Web (Spider)
 	[ 54706] = "ctrlroot", -- Venom Web Spray (Silithid)
 	[ 90327] = "ctrlroot", -- Lock Jaw (Dog)
 	[128405] = "ctrlroot", -- Narrow Escape (talent)
-    -- Mage
+	-- Mage
 	[   122] = "ctrlroot", -- Frost Nova
 	[110693] = "ctrlroot", -- Frost Nova (Symbiosis)
 	[ 33395] = "ctrlroot", -- Freeze (Water Elemental)
-    -- Monk
+	-- Monk
 	[116706] = "ctrlroot", -- Disable
-    -- Priest
+	-- Priest
+	[ 87194] = "ctrlroot", -- Glyph of Mind Blast
 	[114404] = "ctrlroot", -- Void Tendrils
-    -- Shaman
-	[ 64695] = "ctrlroot", -- Earthgrab
+	-- Rogue
+	[113952] = "ctrlroot", -- Paralytic Poison (Shiv Effect)
+	-- Shaman
 	[ 63685] = "ctrlroot", -- Freeze (Frozen Power talent)
-    -- Warrior
+	-- Warrior
 	[107566] = "ctrlroot", -- Staggering Shout (talent)
 
+	-- [ 64695] = "ctrlroot", -- Earthgrab
 	--[[ HORROR ]]--
 	-- Priest
 	[ 64044] = "horror", -- Psychic Horror (Horrify effect)
@@ -302,7 +308,7 @@ Data.categoryNames = {
 	["banish"] = L["Banish"],
 	["bindelemental"] = L["Bind Elemental"],
 	["charge"] = L["Charge"],
-	["ctrlroot"] = L["Controlled roots"],
+	["ctrlroot"] = L["Roots"],
 	["ctrlstun"] = L["Controlled stuns"],
 	["cyclone"] = L["Cyclone"],
 	["disarm"] = L["Disarms"],
