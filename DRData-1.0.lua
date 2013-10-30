@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1026
+local minor = 1027
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -299,7 +299,7 @@ Data.spells = {
 	[ 87194] = "ctrlroot", -- Glyph of Mind Blast
 	[114404] = "ctrlroot", -- Void Tendrils
 	-- Rogue
-	[113952] = "ctrlroot", -- Paralytic Poison (Shiv Effect)
+	[115197] = "ctrlroot", -- Partial Paralysis (Shiv effect with Paralytic Poison)
 	-- Shaman
 	[ 63685] = "ctrlroot", -- Freeze (Frozen Power talent)
 	-- Warrior
