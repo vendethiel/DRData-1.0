@@ -71,8 +71,8 @@ Data.spells = {
 	[ 17735] = "taunt", -- Suffering (Voidwalker)
 	-- Warrior
 	[   355] = "taunt", -- Taunt
-	-- ???
-	[ 36213] = "taunt", -- Angered Earth -- FIXME: NPC ability ?
+	-- Shaman
+	[ 36213] = "taunt", -- Angered Earth (Earth Elemental)
 
 	--[[ MESMERIZES ]]--
 	-- Note: reuse the previously-used "disorient" category to avoid breaking addons
@@ -263,7 +263,7 @@ Data.spells = {
 	-- 2. Reuse the previously-used "rndstun" category to avoid breaking addons.
 
 	-- Rogue
-	[113953] = "rndstun", -- Paralytic Poison
+	[113953] = "rndstun", -- Paralysis (stun effect of Paralytic Poison)
 	-- Warrior
 	[118895] = "rndstun", -- Dragon Roar (talent)
 	-- Shaman
