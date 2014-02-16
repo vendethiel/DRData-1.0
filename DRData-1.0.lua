@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1027
+local minor = 1028
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -216,6 +216,7 @@ Data.spells = {
 	[ 22570] = "ctrlstun", -- Maim
 	[  5211] = "ctrlstun", -- Mighty Bash
 	[  9005] = "ctrlstun", -- Pounce
+	[102546] = "ctrlstun", -- Pounce (Incarnation)
 	[113801] = "ctrlstun", -- Bash (treants in feral spec) (Bugged by blizzard - it instantly applies all 3 levels of DR right now, making any target instantly immune to ctrlstuns)
 	-- Hunter
 	[117526] = "ctrlstun", -- Binding Shot
