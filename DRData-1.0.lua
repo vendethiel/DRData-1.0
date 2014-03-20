@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1028
+local minor = 1029
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -254,7 +254,7 @@ Data.spells = {
 	[ 22703] = "ctrlstun", -- Summon Infernal
 	-- Warrior
 	[132168] = "ctrlstun", -- Shockwave
-	[107570] = "ctrlstun", -- Storm Bolt
+	[132169] = "ctrlstun", -- Storm Bolt
 	-- Tauren
 	[ 20549] = "ctrlstun", -- War Stomp
 
