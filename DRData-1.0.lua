@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1028
+local minor = 1030
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -228,6 +228,7 @@ local spellsAndProvidersByCategory = {
 		[ 22570] = true, -- Maim
 		[  5211] = true, -- Mighty Bash
 		[  9005] = true, -- Pounce
+		[102546] = true, -- Pounce (Incarnation)
 		[113801] = true, -- Bash (treants in feral spec) (Bugged by blizzard - it instantly applies all 3 levels of DR right now, making any target instantly immune to ctrlstuns)
 		-- Hunter
 		[117526] = true, -- Binding Shot
@@ -265,7 +266,7 @@ local spellsAndProvidersByCategory = {
 		[ 22703] = true, -- Summon Infernal
 		-- Warrior
 		[132168] = true, -- Shockwave
-		[107570] = true, -- Storm Bolt
+		[132169] = true, -- Storm Bolt
 		-- Tauren
 		[ 20549] = true, -- War Stomp
 	},
