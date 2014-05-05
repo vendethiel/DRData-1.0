@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1030
+local minor = 1031
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -50,11 +50,16 @@ end
 Data.RESET_TIME = 18
 
 -- Spells and providers by categories
--- Generic format:
---   category = {
---     debuffId = spellId -- the debuff and the spell that applies it differs
---     debuffId = true    -- the debuff and the spell that applies it are the same
---   }
+--[[ Generic format:
+	category = {
+		-- When the debuff and the spell that applies it are the same:
+		debuffId = true
+		-- When the debuff and the spell that applies it differs:
+		debuffId = spellId
+		-- When several spells applies the debuff:
+		debuffId = {spellId1, spellId2, ...}
+	}
+--]]
 local spellsAndProvidersByCategory = {
 	--[[ TAUNT ]]--
 	taunt = {
@@ -88,7 +93,7 @@ local spellsAndProvidersByCategory = {
 		-- Druid
 		[  2637] = true, -- Hibernate
 		-- Hunter
-		[  3355] = true, -- Freezing Trap
+		[  3355] = {1499, 60192}, -- Freezing Trap
 		[ 19386] = true, -- Wyvern Sting
 		-- Mage
 		[   118] = true, -- Polymorph
@@ -142,7 +147,7 @@ local spellsAndProvidersByCategory = {
 		-- Druid
 		[114237] = true, -- Glyph of Fae Silence
 		-- Hunter
-		[ 34490] = true, -- Silencing Shot
+		[ 34490] = true, -- Silencing Shot -- PROVIDER NEED CONFIRMATION
 		-- Mage
 		[102051] = true, -- Frostjaw
 		[ 55021] = true, -- Counterspell
@@ -231,15 +236,15 @@ local spellsAndProvidersByCategory = {
 		[102546] = true, -- Pounce (Incarnation)
 		[113801] = true, -- Bash (treants in feral spec) (Bugged by blizzard - it instantly applies all 3 levels of DR right now, making any target instantly immune to ctrlstuns)
 		-- Hunter
-		[117526] = true, -- Binding Shot
-		[ 24394] = true, -- Intimidation
-		[ 90337] = true, -- Bad Manner (Monkey pet)
-		[126246] = true, -- Lullaby (Crane pet) -- ID NEED CONFIRMATION
-		[126423] = true, -- Petrifying Gaze (Basilisk pet) -- ID NEED CONFIRMATION
-		[126355] = true, -- Quill (Porcupine pet) -- ID NEED CONFIRMATION
-		[ 56626] = true, -- Sting (Wasp pet)
-		[ 50519] = true, -- Sonic Blast (Bat pet)
-		[ 96201] = true, -- Web Wrap (Shale Spider pet)
+		[117526] = 109248, -- Binding Shot
+		[ 24394] = 19577, -- Intimidation
+		[ 90337] = true, -- Bad Manner (Monkey pet) -- PROVIDER NEED CONFIRMATION
+		[126246] = true, -- Lullaby (Crane pet) -- ID NEED CONFIRMATION -- PROVIDER NEED CONFIRMATION
+		[126423] = true, -- Petrifying Gaze (Basilisk pet) -- ID NEED CONFIRMATION -- PROVIDER NEED CONFIRMATION
+		[126355] = true, -- Quill (Porcupine pet) -- ID NEED CONFIRMATION -- PROVIDER NEED CONFIRMATION
+		[ 56626] = true, -- Sting (Wasp pet) -- PROVIDER NEED CONFIRMATION
+		[ 50519] = true, -- Sonic Blast (Bat pet) -- PROVIDER NEED CONFIRMATION
+		[ 96201] = true, -- Web Wrap (Shale Spider pet) -- PROVIDER NEED CONFIRMATION
 		-- Mage
 		[118271] = true, -- Combustion
 		[ 44572] = true, -- Deep Freeze
@@ -299,12 +304,12 @@ local spellsAndProvidersByCategory = {
 		[ 19975] = true, -- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
 		[102359] = true, -- Mass Entanglement (talent)
 		-- Hunter
-		[ 53148] = true, -- Charge (Tenacity pet)
-		[ 50245] = true, -- Pin (Crab)
-		[  4167] = true, -- Web (Spider)
-		[ 54706] = true, -- Venom Web Spray (Silithid)
-		[ 90327] = true, -- Lock Jaw (Dog)
-		[128405] = true, -- Narrow Escape (talent)
+		[ 53148] = true, -- Charge (Tenacity pet) -- PROVIDER NEED CONFIRMATION
+		[ 50245] = true, -- Pin (Crab) -- PROVIDER NEED CONFIRMATION
+		[  4167] = true, -- Web (Spider) -- PROVIDER NEED CONFIRMATION
+		[ 54706] = true, -- Venom Web Spray (Silithid) -- PROVIDER NEED CONFIRMATION
+		[ 90327] = true, -- Lock Jaw (Dog) -- PROVIDER NEED CONFIRMATION
+		[128405] = true, -- Narrow Escape (passive talent)
 		-- Mage
 		[   122] = true, -- Frost Nova
 		[110693] = true, -- Frost Nova (Symbiosis)
@@ -327,7 +332,7 @@ local spellsAndProvidersByCategory = {
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
 	shortroot = {
 		-- Hunter
-		[ 64803] = true, -- Entrapment
+		[ 64803] = true, -- Entrapment (passive talent)
 		-- Mage
 		[111264] = true, -- Ice Ward -- ID NEED CONFIRMATION
 		-- Monk
