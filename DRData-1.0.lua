@@ -147,7 +147,7 @@ local spellsAndProvidersByCategory = {
 		-- Druid
 		[114237] = true, -- Glyph of Fae Silence
 		-- Hunter
-		[ 34490] = true, -- Silencing Shot -- PROVIDER NEED CONFIRMATION
+		[ 34490] = true, -- Silencing Shot
 		-- Mage
 		[102051] = true, -- Frostjaw
 		[ 55021] = true, -- Counterspell
@@ -238,13 +238,13 @@ local spellsAndProvidersByCategory = {
 		-- Hunter
 		[117526] = 109248, -- Binding Shot
 		[ 24394] = 19577, -- Intimidation
-		[ 90337] = true, -- Bad Manner (Monkey pet) -- PROVIDER NEED CONFIRMATION
-		[126246] = true, -- Lullaby (Crane pet) -- ID NEED CONFIRMATION -- PROVIDER NEED CONFIRMATION
-		[126423] = true, -- Petrifying Gaze (Basilisk pet) -- ID NEED CONFIRMATION -- PROVIDER NEED CONFIRMATION
-		[126355] = true, -- Quill (Porcupine pet) -- ID NEED CONFIRMATION -- PROVIDER NEED CONFIRMATION
-		[ 56626] = true, -- Sting (Wasp pet) -- PROVIDER NEED CONFIRMATION
-		[ 50519] = true, -- Sonic Blast (Bat pet) -- PROVIDER NEED CONFIRMATION
-		[ 96201] = true, -- Web Wrap (Shale Spider pet) -- PROVIDER NEED CONFIRMATION
+		[ 90337] = true, -- Bad Manner (Monkey pet)
+		[126246] = true, -- Lullaby (Crane pet)
+		[126423] = true, -- Petrifying Gaze (Basilisk pet)
+		[126355] = true, -- Quill (Porcupine pet)
+		[ 56626] = true, -- Sting (Wasp pet)
+		[ 50519] = true, -- Sonic Blast (Bat pet)
+		[ 96201] = true, -- Web Wrap (Shale Spider pet)
 		-- Mage
 		[118271] = true, -- Combustion
 		[ 44572] = true, -- Deep Freeze
@@ -304,12 +304,12 @@ local spellsAndProvidersByCategory = {
 		[ 19975] = true, -- Nature's Grasp (Uses different spellIDs than Entangling Roots for the same spell)
 		[102359] = true, -- Mass Entanglement (talent)
 		-- Hunter
-		[ 53148] = true, -- Charge (Tenacity pet) -- PROVIDER NEED CONFIRMATION
-		[ 50245] = true, -- Pin (Crab) -- PROVIDER NEED CONFIRMATION
-		[  4167] = true, -- Web (Spider) -- PROVIDER NEED CONFIRMATION
-		[ 54706] = true, -- Venom Web Spray (Silithid) -- PROVIDER NEED CONFIRMATION
-		[ 90327] = true, -- Lock Jaw (Dog) -- PROVIDER NEED CONFIRMATION
-		[128405] = true, -- Narrow Escape (passive talent)
+		[ 53148] = 61685, -- Charge (Tenacity pet)
+		[ 50245] = true, -- Pin (Crab)
+		[  4167] = true, -- Web (Spider)
+		[ 54706] = true, -- Venom Web Spray (Silithid)
+		[ 90327] = true, -- Lock Jaw (Dog)
+		[136634] = true, -- Narrow Escape (passive talent)
 		-- Mage
 		[   122] = true, -- Frost Nova
 		[110693] = true, -- Frost Nova (Symbiosis)
@@ -332,7 +332,7 @@ local spellsAndProvidersByCategory = {
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
 	shortroot = {
 		-- Hunter
-		[ 64803] = true, -- Entrapment (passive talent)
+		[135373] = true, -- Entrapment (passive)
 		-- Mage
 		[111264] = true, -- Ice Ward -- ID NEED CONFIRMATION
 		-- Monk
