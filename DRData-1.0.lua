@@ -75,7 +75,9 @@ local spellsAndProvidersByCategory = {
 		-- Hunter
 		[ 20736] = true, -- Distracting Shot
 		-- Monk
-		[116189] = true, -- Provoke 115546 ?
+		[116189] = 115546, -- Provoke
+		[118635] = 115546, -- Provoke via the Black Ox Statue -- NEED TESTING
+		[118585] = 115543, -- Leer of the Ox -- NEED TESTING
 		-- Paladin
 		[ 62124] = true, -- Reckoning
 		-- Warlock
@@ -133,7 +135,7 @@ local spellsAndProvidersByCategory = {
 		-- Mage
 		[ 31661] = true, -- Dragon's Breath
 		-- Monk
-		[123394] = true, -- Breath of Fire (Glyphed) -- ID NEED CONFIRMATION
+		[123393] = true, -- Breath of Fire (Glyphed)
 		-- Priest
 		[ 88625] = true, -- Holy Word: Chastise
 	},
@@ -152,8 +154,8 @@ local spellsAndProvidersByCategory = {
 		[102051] = true, -- Frostjaw
 		[ 55021] = true, -- Counterspell
 		-- Monk
-		[137460] = true, -- Ring of Peace (Silence effect)
-		[116709] = true, -- Spear Hand Strike
+		[137460] = 116844, -- Ring of Peace (Silence effect)
+		[116709] = 116705, -- Spear Hand Strike
 		-- Paladin
 		[ 31935] = true, -- Avenger's Shield
 		-- Priest
@@ -178,9 +180,9 @@ local spellsAndProvidersByCategory = {
 		[ 50541] = true, -- Clench (Scorpid pet)
 		[ 91644] = true, -- Snatch (Bird of Prey pet)
 		-- Monk
-		[117368] = true, -- Grapple Weapon
-		[126458] = true, -- Grapple Weapon (Symbiosis)
-		[137461] = true, -- Ring of Peace (Disarm effect)
+		[117368] =   true, -- Grapple Weapon
+		[126458] =   true, -- Grapple Weapon (Symbiosis)
+		[137461] = 116844, -- Ring of Peace (Disarm effect)
 		-- Priest
 		[ 64058] = true, -- Psychic Horror (Disarm effect)
 		-- Rogue
@@ -249,10 +251,10 @@ local spellsAndProvidersByCategory = {
 		[118271] = true, -- Combustion
 		[ 44572] = true, -- Deep Freeze
 		-- Monk
-		[119392] = true, -- Charging Ox Wave
-		[122242] = true, -- Clash
-		[120086] = true, -- Fists of Fury
-		[119381] = true, -- Leg Sweep
+		[119392] =   true, -- Charging Ox Wave
+		[122242] = 122057, -- Clash
+		[120086] = 113656, -- Fists of Fury
+		[119381] =   true, -- Leg Sweep
 		-- Paladin
 		[115752] = true, -- Blinding Light (Glyphed)
 		[   853] = true, -- Hammer of Justice
@@ -315,7 +317,7 @@ local spellsAndProvidersByCategory = {
 		[110693] = true, -- Frost Nova (Symbiosis)
 		[ 33395] = true, -- Freeze (Water Elemental)
 		-- Monk
-		[116706] = true, -- Disable
+		[116706] = 116095, -- Disable
 		-- Priest
 		[ 87194] = true, -- Glyph of Mind Blast
 		[114404] = true, -- Void Tendrils
@@ -336,7 +338,7 @@ local spellsAndProvidersByCategory = {
 		-- Mage
 		[111264] = true, -- Ice Ward -- ID NEED CONFIRMATION
 		-- Monk
-		[115073] = true, -- Spinning Fire Blossom -- ID NEED CONFIRMATION
+		[123407] = 115073, -- Spinning Fire Blossom
 		-- Shaman
 		[ 64695] = true, -- Earthgrab Totem
 	},
