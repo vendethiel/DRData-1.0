@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1031
+local minor = 1032
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
