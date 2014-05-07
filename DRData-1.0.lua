@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1032
+local minor = 1033
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -119,7 +119,7 @@ local spellsAndProvidersByCategory = {
 		[ 76780] = true, -- Bind Elemental
 		[ 51514] = true, -- Hex
 		-- Warlock
-		[   710] = true, -- Banish
+		[   710] = true, -- Banish -- Glyph of Crimson Banish ?
 		-- Pandaren
 		[107079] = true, -- Quaking Palm
 	},
@@ -163,8 +163,8 @@ local spellsAndProvidersByCategory = {
 		-- Rogue
 		[  1330] = true, -- Garrote
 		-- Warlock
-		[ 24259] = true, -- Spell Lock (Fel Hunter)
-		[115782] = true, -- Optical Blast (Observer)
+		[ 24259] = 19647, -- Spell Lock (Fel Hunter)
+		[115782] = 115781, -- Optical Blast (Observer)
 		-- Blood Elf
 		[ 25046] = true, -- Arcane Torrent (Energy version)
 		[ 28730] = true, -- Arcane Torrent (Mana version)
@@ -212,7 +212,7 @@ local spellsAndProvidersByCategory = {
 		[  2094] = true, -- Blind
 		-- Warlock
 		[  5782] = true, -- Fear
-		[118699] = true, -- Fear -- new SpellID in MoP, Blood Fear uses same ID
+		[118699] = 5782, -- Fear -- new SpellID in MoP, Blood Fear uses same ID
 		[  5484] = true, -- Howl of Terror
 		[115268] = true, -- Mesmerize (Shivarra)
 		[  6358] = true, -- Seduction (Succubus)
@@ -270,7 +270,7 @@ local spellsAndProvidersByCategory = {
 		-- Warlock
 		[ 89766] = true, -- Axe Toss (Felguard)
 		[ 30283] = true, -- Shadowfury
-		[ 22703] = true, -- Summon Infernal
+		[ 22703] = 1122, -- Summon Infernal
 		-- Warrior
 		[132168] = true, -- Shockwave
 		[132169] = true, -- Storm Bolt
