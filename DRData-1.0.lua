@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1034
+local minor = 1035
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -496,22 +496,6 @@ local spellsAndProvidersByCategory = wow_600 and {
 		[132169] = true, -- Storm Bolt
 		-- Tauren
 		[ 20549] = true, -- War Stomp
-	},
-
-	--[[ SHORT STUNS ]]--
-	-- cf.  http://us.battle.net/wow/en/forum/topic/10195910192#3
-	-- Notes: 1. this category does not share diminishing returns with the above Stuns category.
-	-- 2. Reuse the previously-used true category to avoid breaking addons.
-	rndstun = {
-		-- Rogue
-		[113953] = true, -- Paralysis (stun effect of Paralytic Poison)
-		-- Warrior
-		[118895] = true, -- Dragon Roar (talent)
-		-- Shaman
-		[ 77505] = true, -- Earthquake
-		-- Warrior
-		[   100] = true, -- Charge
-		[118000] = true, -- Dragon Roar
 	},
 
 	--[[ ROOTS ]]--
