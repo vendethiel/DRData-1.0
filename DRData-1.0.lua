@@ -604,14 +604,50 @@ local spellsAndProvidersByCategory = wow_600 and {
 	},
 }
 
+local categoryNames = {
+	ctrlroot       = L["Roots"],
+	shortroot      = L["Roots (short)"],
+	ctrlstun       = L["Stuns"],
+	cyclone        = L["Cyclone"],
+	disarm         = L["Disarms"],
+	disorient      = L["Mesmerizes"],
+	shortdisorient = L["Mesmerizes (short)"],
+	fear           = L["Fears"],
+	horror         = L["Horrors"],
+	mc             = L["Mind Control"],
+	rndstun        = L["Stuns (short)"],
+	silence        = L["Silences"],
+	taunt          = L["Taunts"],
+	incapacitate   = L["Incapacitates"],
+	knockback      = L["Knockbacks"]
+}
+
+local pveDR = {
+	ctrlstun = true,
+	rndstun  = true,
+	taunt    = true,
+	cyclone  = true
+}
+
 --- List of spellID -> DR category
 Data.spells = {}
 
 --- List of spellID => ProviderID
 Data.providers = {}
 
+--- DR Category names
+Data.categoryNames = {}
+
+--- Categories that have DR in PvE as well as PvP
+Data.pveDR = {}
+
 -- Dispatch the spells in the final tables
 for category, spells in pairs(spellsAndProvidersByCategory) do
+
+	-- Publish these categories as we have spells in it
+	Data.pveDR[category] = pveDR[category] or false
+	Data.categoryNames[category] = categoryNames[category] or category
+
 	for spell, provider in pairs(spells) do
 		Data.spells[spell] = category
 		if provider == true then -- "== true" is really needed
@@ -622,34 +658,6 @@ for category, spells in pairs(spellsAndProvidersByCategory) do
 		end
 	end
 end
-
--- DR Category names
-Data.categoryNames = {
-	["ctrlroot"] = L["Roots"],
-	["shortroot"] = L["Roots (short)"],
-	["ctrlstun"] = L["Stuns"],
-	["cyclone"] = L["Cyclone"],
-	["disarm"] = L["Disarms"],
-	["disorient"] = L["Mesmerizes"],
-	["shortdisorient"] = L["Mesmerizes (short)"],
-	["fear"] = L["Fears"],
-	["horror"] = L["Horrors"],
-	["mc"] = L["Mind Control"],
-	["rndstun"] = L["Stuns (short)"],
-	["silence"] = L["Silences"],
-	["taunt"] = L["Taunts"],
-	["incapacitate"] = L["Incapacitates"],
-	["knockback"] = L["Knockbacks"], -- NEEDS PROPER TESTING WITH DEPENDENT ADDONS
-}
-
--- Categories that have DR in PvE as well as PvP
-Data.pveDR = {
-	["ctrlstun"] = true,
-	["rndstun"] = true,
-	["taunt"] = true,
-	["cyclone"] = true,
-	-- ["bindelemental"] = true, -- Why was this added to pveDR? Just tested and it definitely does not have PvE DR.
-}
 
 -- Public APIs
 -- Category name in something usable
