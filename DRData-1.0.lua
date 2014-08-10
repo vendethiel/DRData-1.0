@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1033
+local minor = 1034
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -54,6 +54,15 @@ Data.resetTimes = {
 }
 Data.RESET_TIME = Data.resetTimes.default
 
+-- Successives diminished durations
+Data.diminishedDurations = {
+	-- Decreases by 50%, immune at the 4th application
+	default   = { 0.50, 0.25 },
+	-- Decreases by 35%, immune at the 5th application
+	taunt     = { 0.65, 0.42, 0.27 },
+	-- Immediately immune
+	knockback = {},
+}
 
 -- Spells and providers by categories
 --[[ Generic format:
@@ -473,14 +482,14 @@ function Data:GetCategories()
 	return Data.categoryNames
 end
 
--- Next DR, if it's 1.0, next is 0.50, if it's 0.[50] = "ctrlroot",next is 0.[25] = "ctrlroot",and such
-function Data:NextDR(diminished)
-	if( diminished == 1 ) then
-		return 0.50
-	elseif( diminished == 0.50 ) then
-		return 0.25
+-- Next DR
+function Data:NextDR(diminished, category)
+	local durations = Data.diminishedDurations[category or "default"] or Data.diminishedDurations.default
+	for i = 1, #durations do
+		if diminished > durations[i] then
+			return durations[i]
+		end
 	end
-
 	return 0
 end
 
@@ -557,7 +566,7 @@ local function debuffFaded(spellID, destName, destGUID, isEnemy, isPlayer)
 	local tracked = trackedPlayers[destGUID][drCat]
 
 	tracked.reset = time + DRData:GetResetTime(drCat)
-	tracked.diminished = DRData:NextDR(tracked.diminished)
+	tracked.diminished = DRData:NextDR(tracked.diminished, drCat)
 
 	-- Diminishing returns changed, now you can do an update
 end
