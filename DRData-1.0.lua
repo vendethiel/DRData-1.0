@@ -45,9 +45,15 @@ elseif locale == "zhTW" then
 	--@localization(locale="zhTW", format="lua_additive_table", handle-unlocalized="ignore")@
 end
 
--- How long before DR resets
--- While everyone will tell you it's 15 seconds, it's actually 16 - 20 seconds with 18 being a decent enough average
-Data.RESET_TIME = 18
+-- How long before DR resets ?
+Data.resetTimes = {
+	-- While everyone will tell you it's 15 seconds, it's actually 16 - 20 seconds with 18 being a decent enough average
+	default   = 18,
+	-- Knockbacks are a special case
+	knockback = 10,
+}
+Data.RESET_TIME = Data.resetTimes.default
+
 
 -- Spells and providers by categories
 --[[ Generic format:
@@ -448,8 +454,8 @@ function Data:GetProviders()
 end
 
 -- Seconds before DR resets
-function Data:GetResetTime()
-	return Data.RESET_TIME
+function Data:GetResetTime(category)
+	return Data.resetTimes[category or "default"] or Data.resetTimes.default
 end
 
 -- Get the category of the spellID
@@ -550,7 +556,7 @@ local function debuffFaded(spellID, destName, destGUID, isEnemy, isPlayer)
 	local time = GetTime()
 	local tracked = trackedPlayers[destGUID][drCat]
 
-	tracked.reset = time + DRData:GetResetTime()
+	tracked.reset = time + DRData:GetResetTime(drCat)
 	tracked.diminished = DRData:NextDR(tracked.diminished)
 
 	-- Diminishing returns changed, now you can do an update
