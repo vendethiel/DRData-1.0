@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1036
+local minor = 1037
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -50,7 +50,8 @@ end
 
 -- How long before DR resets ?
 Data.resetTimes = {
-	-- While everyone will tell you it's 15 seconds, it's actually 16 - 20 seconds with 18 being a decent enough average
+	-- The official delay is 15 seconds, but the server only checks this every 5 seconds, so it
+	-- actually ranges from 15 to 20 seconds, 18 is a good average.
 	default   = 18,
 	-- Knockbacks are a special case
 	knockback = 10,
@@ -79,6 +80,10 @@ Data.diminishedDurations = {
 	}
 --]]
 local spellsAndProvidersByCategory = wow_600 and {
+-- Warlords of Draenor categories
+-- See http://blue.mmo-champion.com/topic/326364-diminishing-returns-in-warlords-of-draenor/
+-- The original thread on Blizzard forums is 404.
+
 	--[[ TAUNT ]]--
 	taunt = {
 		-- Death Knight
@@ -107,7 +112,6 @@ local spellsAndProvidersByCategory = wow_600 and {
 	},
 
 	--[[ INCAPACITATES ]]--
-	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#4
 	incapacitate = {
 		-- Druid
 		[    99] = true, -- Incapacitating Roar (talent)
@@ -149,7 +153,6 @@ local spellsAndProvidersByCategory = wow_600 and {
 	},
 
 	--[[ SILENCES ]]--
-	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#6
 	silence = {
 		-- Death Knight
 		[108194] = true, -- Asphyxiate (if target is immune to stun)
@@ -173,7 +176,6 @@ local spellsAndProvidersByCategory = wow_600 and {
 	},
 
 	--[[ DISORIENTS ]]--
-	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#5
 	disorient = {
 		-- Druid
 		[ 33786] = true, -- Cyclone
@@ -195,7 +197,6 @@ local spellsAndProvidersByCategory = wow_600 and {
 	},
 
 	--[[ STUNS ]]--
-	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#3
 	ctrlstun = {
 		-- Death Knight
 		[108194] = true, -- Asphyxiate
@@ -205,7 +206,8 @@ local spellsAndProvidersByCategory = wow_600 and {
 		-- Druid
 		[ 22570] = true, -- Maim
 		[  5211] = true, -- Mighty Bash
-		[163505] = true, -- Rake (Stun from Prowl)
+		-- FIXME: Pounce
+		--[163505] = true, -- Rake (Stun from Prowl)
 		-- Hunter
 		[117526] = 109248, -- Binding Shot
 		[ 24394] = 19577, -- Intimidation
@@ -236,21 +238,7 @@ local spellsAndProvidersByCategory = wow_600 and {
 		[ 20549] = true, -- War Stomp
 	},
 
-	--[[ SHORT STUNS ]]--
-	-- UNKNOWN if this category actually still exists.
-	rndstun = {
-		-- Warrior
-		[118895] = true, -- Dragon Roar (talent)
-		-- Shaman
-		[ 77505] = true, -- Earthquake
-		-- Warrior
-		[   100] = true, -- Charge
-		[118000] = true, -- Dragon Roar
-	},
-
 	--[[ ROOTS ]]--
-	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
-
 	ctrlroot = {
 		-- Death Knight
 		[ 96294] = true, -- Chains of Ice (Chilblains Root)
@@ -277,7 +265,6 @@ local spellsAndProvidersByCategory = wow_600 and {
 	},
 
 	--[[ KNOCKBACK ]]--
-	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#8
 	knockback = {
 		-- Death Knight
 		[108199] = true, -- Gorefiend's Grasp
@@ -292,10 +279,10 @@ local spellsAndProvidersByCategory = wow_600 and {
 		[  6360] = true, -- Whiplash
 		[115770] = true, -- Fellash
 	},
-} or 
--- WARLORDS DR DATA ABOVE THIS POINT
--- PRE-WARLORDS DR DATA BELOW THIS POINT
-{
+} or {
+-- Mists of Pandaria categories
+-- See http://us.battle.net/wow/en/forum/topic/10195910192
+
 	--[[ TAUNT ]]--
 	taunt = {
 		-- Death Knight
@@ -515,7 +502,6 @@ local spellsAndProvidersByCategory = wow_600 and {
 
 	--[[ ROOTS ]]--
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
-
 	ctrlroot = {
 		-- Death Knight
 		[ 96294] = true, -- Chains of Ice (Chilblains Root)
