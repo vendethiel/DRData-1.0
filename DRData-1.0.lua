@@ -1,9 +1,11 @@
 local major = "DRData-1.0"
-local minor = 1034
+local minor = 1036
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
 if( not Data ) then return end
+
+local wow_600 = select(4, GetBuildInfo()) >= 60000
 
 local L = {
 	["Roots"] = "Roots",
@@ -20,6 +22,7 @@ local L = {
 	["Taunts"] = "Taunts",
 	["Roots (short)"] = "Roots (short)",
 	["Knockbacks"] = "Knockbacks",
+	["Incapacitates"] = "Incapacitates",
 }
 
 local locale = GetLocale()
@@ -75,7 +78,224 @@ Data.diminishedDurations = {
 		debuffId = {spellId1, spellId2, ...}
 	}
 --]]
-local spellsAndProvidersByCategory = {
+local spellsAndProvidersByCategory = wow_600 and {
+	--[[ TAUNT ]]--
+	taunt = {
+		-- Death Knight
+		[ 56222] = true, -- Dark Command
+		[ 57603] = true, -- Death Grip
+		-- I have also seen these two spellIDs used for the Death Grip debuff in MoP.
+		-- I have not seen the first one here in any of my MoP testing, but it may still be valid.
+		[ 49560] = true, -- Death Grip
+		[ 51399] = true, -- Death Grip
+		-- Druid
+		[  6795] = true, -- Growl
+		-- Hunter
+		[ 20736] = true, -- Distracting Shot
+		-- Monk
+		[116189] = 115546, -- Provoke
+		[118635] = 115546, -- Provoke via the Black Ox Statue -- NEED TESTING
+		[118585] = 115543, -- Leer of the Ox -- NEED TESTING
+		-- Paladin
+		[ 62124] = true, -- Reckoning
+		-- Warlock
+		[ 17735] = true, -- Suffering (Voidwalker)
+		-- Warrior
+		[   355] = true, -- Taunt
+		-- Shaman
+		[ 36213] = true, -- Angered Earth (Earth Elemental)
+	},
+
+	--[[ INCAPACITATES ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#4
+	incapacitate = {
+		-- Druid
+		[    99] = true, -- Incapacitating Roar (talent)
+		-- Hunter
+		[  3355] = {1499, 60192}, -- Freezing Trap
+		[ 19386] = true, -- Wyvern Sting
+		-- Mage
+		[   118] = true, -- Polymorph
+		[ 28272] = true, -- Polymorph (pig)
+		[ 28271] = true, -- Polymorph (turtle)
+		[ 61305] = true, -- Polymorph (black cat)
+		[ 61025] = true, -- Polymorph (serpent) -- FIXME: gone ?
+		[ 61721] = true, -- Polymorph (rabbit)
+		[ 61780] = true, -- Polymorph (turkey)
+		[ 82691] = true, -- Ring of Frost
+		[ 31661] = true, -- Dragon's Breath
+		-- Monk
+		[115078] = true, -- Paralysis
+		[123393] = true, -- Breath of Fire (Glyphed)
+		[137460] = 116844, -- Ring of Peace -- FIXME: correct spellIDs?
+		-- Paladin
+		[ 20066] = true, -- Repentance
+		-- Priest
+		[   605] = true, -- Dominate Mind
+		[  9484] = true, -- Shackle Undead
+		[ 64044] = true, -- Psychic Horror (Horror effect)
+		[ 88625] = true, -- Holy Word: Chastise
+		-- Rogue
+		[  1776] = true, -- Gouge
+		[  6770] = true, -- Sap
+		-- Shaman
+		[ 51514] = true, -- Hex
+		-- Warlock
+		[   710] = true, -- Banish -- Glyph of Crimson Banish ?
+		[111397] = true, -- Blood Horror
+		[  6789] = true, -- Mortal Coil
+		-- Pandaren
+		[107079] = true, -- Quaking Palm
+	},
+
+	--[[ SILENCES ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#6
+	silence = {
+		-- Death Knight
+		[108194] = true, -- Asphyxiate (if target is immune to stun)
+		[ 47476] = true, -- Strangulate
+		-- Druid
+		[114237] = true, -- Glyph of Fae Silence
+		-- Mage
+		[102051] = true, -- Frostjaw
+		-- Paladin
+		[ 31935] = true, -- Avenger's Shield
+		-- Priest
+		[ 15487] = true, -- Silence
+		-- Rogue
+		[  1330] = true, -- Garrote
+		-- Blood Elf
+		[ 25046] = true, -- Arcane Torrent (Energy version)
+		[ 28730] = true, -- Arcane Torrent (Mana version)
+		[ 50613] = true, -- Arcane Torrent (Runic power version)
+		[ 69179] = true, -- Arcane Torrent (Rage version)
+		[ 80483] = true, -- Arcane Torrent (Focus version)
+	},
+
+	--[[ DISORIENTS ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#5
+	disorient = {
+		-- Druid
+		[ 33786] = true, -- Cyclone
+		-- Paladin
+		[105421] = true, -- Blinding Light -- FIXME: is this the right category? Its missing from blizzard's list
+		[ 10326] = true, -- Turn Evil
+		-- Priest
+		[  8122] = true, -- Psychic Scream
+		-- Rogue
+		[  2094] = true, -- Blind
+		-- Warlock
+		[  5782] = true, -- Fear
+		[118699] = 5782, -- Fear -- new SpellID in MoP, Blood Fear uses same ID
+		[  5484] = true, -- Howl of Terror
+		[115268] = true, -- Mesmerize (Shivarra)
+		[  6358] = true, -- Seduction (Succubus)
+		-- Warrior
+		[  5246] = true, -- Intimidating Shout (main target)
+	},
+
+	--[[ STUNS ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#3
+	ctrlstun = {
+		-- Death Knight
+		[108194] = true, -- Asphyxiate
+		[ 91800] = true, -- Gnaw (Ghoul)
+		[ 91797] = true, -- Monstrous Blow (Dark Transformation Ghoul)
+		[115001] = true, -- Remorseless Winter
+		-- Druid
+		[ 22570] = true, -- Maim
+		[  5211] = true, -- Mighty Bash
+		[163505] = true, -- Rake (Stun from Prowl)
+		-- Hunter
+		[117526] = 109248, -- Binding Shot
+		[ 24394] = 19577, -- Intimidation
+		-- Mage
+		[ 44572] = true, -- Deep Freeze
+		-- Monk
+		[119392] =   true, -- Charging Ox Wave
+		[120086] = 113656, -- Fists of Fury
+		[119381] =   true, -- Leg Sweep
+		-- Paladin
+		[   853] = true, -- Hammer of Justice
+		[119072] = true, -- Holy Wrath
+		[105593] = true, -- Fist of Justice
+		-- Rogue
+		[  1833] = true, -- Cheap Shot
+		[   408] = true, -- Kidney Shot
+		-- Shaman
+		[118345] = true, -- Pulverize (Primal Earth Elemental)
+		[118905] = true, -- Static Charge (Capacitor Totem)
+		-- Warlock
+		[ 89766] = true, -- Axe Toss (Felguard)
+		[ 30283] = true, -- Shadowfury
+		[ 22703] = 1122, -- Summon Infernal
+		-- Warrior
+		[132168] = true, -- Shockwave
+		[132169] = true, -- Storm Bolt
+		-- Tauren
+		[ 20549] = true, -- War Stomp
+	},
+
+	--[[ SHORT STUNS ]]--
+	-- UNKNOWN if this category actually still exists.
+	rndstun = {
+		-- Warrior
+		[118895] = true, -- Dragon Roar (talent)
+		-- Shaman
+		[ 77505] = true, -- Earthquake
+		-- Warrior
+		[   100] = true, -- Charge
+		[118000] = true, -- Dragon Roar
+	},
+
+	--[[ ROOTS ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
+
+	ctrlroot = {
+		-- Death Knight
+		[ 96294] = true, -- Chains of Ice (Chilblains Root)
+		-- Druid
+		[   339] = true, -- Entangling Roots
+		[102359] = true, -- Mass Entanglement (talent)
+		[113770] = true, -- Entangling Roots (Treants)
+		-- Hunter
+		[ 53148] = 61685, -- Charge (Tenacity pet)
+		[135373] = true, -- Entrapment (passive)
+		[136634] = true, -- Narrow Escape (passive talent)
+		-- Mage
+		[   122] = true, -- Frost Nova
+		[ 33395] = true, -- Freeze (Water Elemental)
+		[111340] = true, -- Ice Ward
+		-- Monk
+		[116706] = 116095, -- Disable
+		-- Priest
+		[ 87194] = true, -- Glyph of Mind Blast
+		[114404] = true, -- Void Tendrils
+		-- Shaman
+		[ 63685] = true, -- Freeze (Frozen Power talent)
+		[ 64695] = true, -- Earthgrab Totem
+	},
+
+	--[[ KNOCKBACK ]]--
+	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#8
+	knockback = {
+		-- Death Knight
+		[108199] = true, -- Gorefiend's Grasp
+		-- Druid
+		[102793] = true, -- Ursol's Vortex
+		[132469] = true, -- Typhoon
+		-- Hunter
+		[119403] = true, -- Glyph of Explosive Trap
+		-- Shaman
+		[ 51490] = true, -- Thunderstorm
+		-- Warlock
+		[  6360] = true, -- Whiplash
+		[115770] = true, -- Fellash
+	},
+} or 
+-- WARLORDS DR DATA ABOVE THIS POINT
+-- PRE-WARLORDS DR DATA BELOW THIS POINT
+{
 	--[[ TAUNT ]]--
 	taunt = {
 		-- Death Knight
@@ -293,22 +513,6 @@ local spellsAndProvidersByCategory = {
 		[ 20549] = true, -- War Stomp
 	},
 
-	--[[ SHORT STUNS ]]--
-	-- cf.  http://us.battle.net/wow/en/forum/topic/10195910192#3
-	-- Notes: 1. this category does not share diminishing returns with the above Stuns category.
-	-- 2. Reuse the previously-used true category to avoid breaking addons.
-	rndstun = {
-		-- Rogue
-		[113953] = true, -- Paralysis (stun effect of Paralytic Poison)
-		-- Warrior
-		[118895] = true, -- Dragon Roar (talent)
-		-- Shaman
-		[ 77505] = true, -- Earthquake
-		-- Warrior
-		[   100] = true, -- Charge
-		[118000] = true, -- Dragon Roar
-	},
-
 	--[[ ROOTS ]]--
 	-- cf. http://us.battle.net/wow/en/forum/topic/10195910192#2
 
@@ -351,7 +555,7 @@ local spellsAndProvidersByCategory = {
 		-- Hunter
 		[135373] = true, -- Entrapment (passive)
 		-- Mage
-		[111264] = true, -- Ice Ward -- ID NEED CONFIRMATION
+		[111340] = true, -- Ice Ward
 		-- Monk
 		[123407] = 115073, -- Spinning Fire Blossom
 		-- Shaman
@@ -434,6 +638,7 @@ Data.categoryNames = {
 	["rndstun"] = L["Stuns (short)"],
 	["silence"] = L["Silences"],
 	["taunt"] = L["Taunts"],
+	["incapacitate"] = L["Incapacitates"],
 	["knockback"] = L["Knockbacks"], -- NEEDS PROPER TESTING WITH DEPENDENT ADDONS
 }
 
