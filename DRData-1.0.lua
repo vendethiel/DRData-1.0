@@ -66,7 +66,7 @@ Data.diminishedDurations = {
 		debuffId = true
 		-- When the debuff and the spell that applies it differs:
 		debuffId = spellId
-		-- When several spells applies the debuff:
+		-- When several spells apply the debuff:
 		debuffId = {spellId1, spellId2, ...}
 	}
 --]]
@@ -136,8 +136,8 @@ local spellsAndProvidersByCategory = {
 		-- Shaman
 		[ 51514] = true, -- Hex
 		-- Warlock
-		[   710] = true, -- Banish -- Glyph of Crimson Banish ?
-		[111397] = true, -- Blood Horror
+		[   710] = true, -- Banish
+		[137143] = 111397, -- Blood Horror
 		[  6789] = true, -- Mortal Coil
 		-- Pandaren
 		[107079] = true, -- Quaking Palm
@@ -178,9 +178,10 @@ local spellsAndProvidersByCategory = {
 		-- Rogue
 		[  2094] = true, -- Blind
 		-- Warlock
-		[  5782] = true, -- Fear
-		[118699] = 5782, -- Fear -- new SpellID in MoP, Blood Fear uses same ID
-		[  5484] = true, -- Howl of Terror
+		[  5782] = true, -- Fear -- probably unused
+		[118699] = 5782, -- Fear -- new debuff ID since MoP
+		[130616] = 5782, -- Fear (with Glyph of Fear)
+		[  5484] = true, -- Howl of Terror (talent)
 		[115268] = true, -- Mesmerize (Shivarra)
 		[  6358] = true, -- Seduction (Succubus)
 		-- Warrior
