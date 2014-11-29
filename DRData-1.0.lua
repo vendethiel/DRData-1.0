@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1039
+local minor = 1040
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -199,7 +199,7 @@ local spellsAndProvidersByCategory = {
 		[ 22570] = true, -- Maim
 		[  5211] = true, -- Mighty Bash
 		-- FIXME: Pounce
-		--[163505] = true, -- Rake (Stun from Prowl)
+		[163505] = true, -- Rake (Stun from Prowl)
 		-- Hunter
 		[117526] = 109248, -- Binding Shot
 		[ 24394] = 19577, -- Intimidation
