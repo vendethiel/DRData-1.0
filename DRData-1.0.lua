@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1040
+local minor = 1041
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -79,11 +79,7 @@ local spellsAndProvidersByCategory = {
 	taunt = {
 		-- Death Knight
 		[ 56222] = true, -- Dark Command
-		[ 57603] = true, -- Death Grip
-		-- I have also seen these two spellIDs used for the Death Grip debuff in MoP.
-		-- I have not seen the first one here in any of my MoP testing, but it may still be valid.
-		[ 49560] = true, -- Death Grip
-		[ 51399] = true, -- Death Grip
+		[ 49560] = 49576, -- Death Grip
 		-- Druid
 		[  6795] = true, -- Growl
 		-- Hunter
