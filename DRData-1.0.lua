@@ -78,7 +78,9 @@ local spellsAndProvidersByCategory = {
 	taunt = {
 		-- Death Knight
 		[ 56222] = true, -- Dark Command
-		[ 49560] = 49576, -- Death Grip
+		[ 57603] = true, -- Death Grip
+		-- I have also seen these two spellIDs used for the Death Grip debuff in MoP.
+		[ 51399] = true, -- Death Grip
 		-- Druid
 		[  6795] = true, -- Growl
 		-- Hunter
@@ -86,7 +88,6 @@ local spellsAndProvidersByCategory = {
 		-- Monk
 		[116189] = 115546, -- Provoke
 		[118635] = 115546, -- Provoke via the Black Ox Statue -- NEED TESTING
-		[118585] = 115543, -- Leer of the Ox -- NEED TESTING
 		-- Paladin
 		[ 62124] = true, -- Reckoning
 		-- Warlock
@@ -102,7 +103,7 @@ local spellsAndProvidersByCategory = {
 		-- Druid
 		[    99] = true, -- Incapacitating Roar (talent)
 		-- Hunter
-		[  3355] = {1499, 60192}, -- Freezing Trap
+		[  3355] = 187650, -- Freezing Trap
 		[ 19386] = true, -- Wyvern Sting
 		-- Mage
 		[   118] = true, -- Polymorph
@@ -115,7 +116,6 @@ local spellsAndProvidersByCategory = {
 		[ 82691] = true, -- Ring of Frost
 		-- Monk
 		[115078] = true, -- Paralysis
-		[123393] = true, -- Breath of Fire (Glyphed)
 		[137460] = 116844, -- Ring of Peace -- FIXME: correct spellIDs?
 		-- Paladin
 		[ 20066] = true, -- Repentance
@@ -131,7 +131,7 @@ local spellsAndProvidersByCategory = {
 		[ 51514] = true, -- Hex
 		-- Warlock
 		[   710] = true, -- Banish
-		[137143] = 111397, -- Blood Horror
+		-- [137143] = 111397, -- Blood Horror -- NOTE: gone in Legion TODO
 		[  6789] = true, -- Mortal Coil
 		-- Pandaren
 		[107079] = true, -- Quaking Palm
@@ -142,10 +142,8 @@ local spellsAndProvidersByCategory = {
 		-- Death Knight
 		[108194] = true, -- Asphyxiate (if target is immune to stun)
 		[ 47476] = true, -- Strangulate
-		-- Druid
-		[114237] = true, -- Glyph of Fae Silence
 		-- Mage
-		[102051] = true, -- Frostjaw
+		-- [102051] = true, -- Frostjaw -- NOTE: gone in Legion
 		-- Paladin
 		[ 31935] = true, -- Avenger's Shield
 		-- Priest
@@ -168,7 +166,7 @@ local spellsAndProvidersByCategory = {
 		[ 31661] = true, -- Dragon's Breath
 		-- Paladin
 		[105421] = true, -- Blinding Light -- FIXME: is this the right category? Its missing from blizzard's list
-		[ 10326] = true, -- Turn Evil
+		-- [ 10326] = true, -- Turn Evil -- NOTE: gone in Legion
 		-- Priest
 		[  8122] = true, -- Psychic Scream
 		-- Rogue
@@ -190,7 +188,7 @@ local spellsAndProvidersByCategory = {
 		[108194] = true, -- Asphyxiate
 		[ 91800] = true, -- Gnaw (Ghoul)
 		[ 91797] = true, -- Monstrous Blow (Dark Transformation Ghoul)
-		[115001] = true, -- Remorseless Winter
+		-- [115001] = true, -- Remorseless Winter -- NOTE: gone in Legion
 		-- Druid
 		[ 22570] = true, -- Maim
 		[  5211] = true, -- Mighty Bash
@@ -200,15 +198,15 @@ local spellsAndProvidersByCategory = {
 		[117526] = 109248, -- Binding Shot
 		[ 24394] = 19577, -- Intimidation
 		-- Mage
-		[ 44572] = true, -- Deep Freeze
+		-- [ 44572] = true, -- Deep Freeze -- NOTE: gone in Legion
 		-- Monk
-		[119392] =   true, -- Charging Ox Wave
+		-- [119392] =   true, -- Charging Ox Wave -- NOTE: gone in Legion
 		[120086] = 113656, -- Fists of Fury
 		[119381] =   true, -- Leg Sweep
 		-- Paladin
 		[   853] = true, -- Hammer of Justice
-		[119072] = true, -- Holy Wrath
-		[105593] = true, -- Fist of Justice
+		-- [119072] = true, -- Holy Wrath -- NOTE: gone in Legion
+		-- [105593] = true, -- Fist of Justice -- NOTE: gone in Legion
 		-- Rogue
 		[  1833] = true, -- Cheap Shot
 		[   408] = true, -- Kidney Shot
@@ -233,7 +231,7 @@ local spellsAndProvidersByCategory = {
 		-- Druid
 		[   339] = true, -- Entangling Roots
 		[102359] = true, -- Mass Entanglement (talent)
-		[113770] = true, -- Entangling Roots (Treants)
+		-- [113770] = true, -- Entangling Roots (Treants) -- NOTE: gone in Legion
 		-- Hunter
 		[ 53148] = 61685, -- Charge (Tenacity pet)
 		[135373] = true, -- Entrapment (passive)
@@ -241,14 +239,13 @@ local spellsAndProvidersByCategory = {
 		-- Mage
 		[   122] = true, -- Frost Nova
 		[ 33395] = true, -- Freeze (Water Elemental)
-		[111340] = true, -- Ice Ward
+		-- [111340] = true, -- Ice Ward -- NOTE: gone in Legion
 		-- Monk
 		[116706] = 116095, -- Disable
 		-- Priest
-		[ 87194] = true, -- Glyph of Mind Blast
 		[114404] = true, -- Void Tendrils
 		-- Shaman
-		[ 63685] = true, -- Freeze (Frozen Power talent)
+		-- [ 63685] = true, -- Freeze (Frozen Power talent) -- NOTE: gone in Legion
 		[ 64695] = true, -- Earthgrab Totem
 	},
 
@@ -260,7 +257,7 @@ local spellsAndProvidersByCategory = {
 		[102793] = true, -- Ursol's Vortex
 		[132469] = true, -- Typhoon
 		-- Hunter
-		[119403] = true, -- Glyph of Explosive Trap
+		-- [119403] = true, -- Glyph of Explosive Trap -- NOTE: gone in Legion
 		-- Shaman
 		[ 51490] = true, -- Thunderstorm
 		-- Warlock
