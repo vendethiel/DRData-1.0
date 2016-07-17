@@ -77,6 +77,8 @@ local spellsAndProvidersByCategory = {
 		-- Death Knight
 		[ 56222] = true, -- Dark Command
 		[ 57603] = true, -- Death Grip
+		-- Demon Hunter
+		[185245] = true, -- Torment
 		-- I have also seen these two spellIDs used for the Death Grip debuff in MoP.
 		[ 51399] = true, -- Death Grip
 		-- Druid
@@ -95,6 +97,8 @@ local spellsAndProvidersByCategory = {
 	},
 
 	incapacitate = {
+		-- Demon Hunter
+		[217832] = true, -- Imprison
 		-- Druid
 		[    99] = true, -- Incapacitating Roar (talent)
 		-- Hunter
@@ -137,6 +141,8 @@ local spellsAndProvidersByCategory = {
 		-- Death Knight
 		[108194] = true, -- Asphyxiate (if target is immune to stun)
 		[ 47476] = true, -- Strangulate
+		-- Demon Hunter
+		[204490] = 202137, -- Sigil of Silence (Vengeance)
 		-- Paladin
 		[ 31935] = true, -- Avenger's Shield
 		-- Priest
@@ -152,6 +158,8 @@ local spellsAndProvidersByCategory = {
 	},
 
 	disorient = {
+		-- Demon Hunter
+		[207685] = 207684, -- Sigil of Misery (Vengeance)
 		-- Druid
 		[ 33786] = true, -- Cyclone
 		-- Hunter
@@ -182,7 +190,13 @@ local spellsAndProvidersByCategory = {
 		[108194] = true, -- Asphyxiate
 		[ 91800] = true, -- Gnaw (Ghoul)
 		[ 91797] = true, -- Monstrous Blow (Dark Transformation Ghoul)
-		-- [115001] = true, -- Remorseless Winter -- NOTE: gone in Legion
+		-- Demon Hunter
+		[179057] = true, -- Chaos Nova (Havoc)
+		[200166] = 191427, -- Metamorphosis (Havoc)
+		[205630] = true, -- Illidan's Grasp (hold) (Vengeance PvP)
+		[208618] = 205639, -- Illidan's Grasp (throw) (Vengeance PvP)
+		[211881] = true, -- Fel Eruption (talent)
+		[221527] = true, -- Imprison (with Detainment Havoc PvP talent) -- TODO: confirm category
 		-- Druid
 		[ 22570] = true, -- Maim
 		[  5211] = true, -- Mighty Bash
@@ -239,6 +253,9 @@ local spellsAndProvidersByCategory = {
 	knockback = {
 		-- Death Knight
 		[108199] = true, -- Gorefiend's Grasp
+		-- Demon Hunter
+		[204843] = 202138, -- Sigil of Chains -- TODO confirm category
+		[205629] = true, -- Demonic Trample (Vengeance PvP)
 		-- Druid
 		[102793] = true, -- Ursol's Vortex
 		[132469] = true, -- Typhoon
