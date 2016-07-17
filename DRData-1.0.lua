@@ -85,7 +85,7 @@ local spellsAndProvidersByCategory = {
 		[  6795] = true, -- Growl
 		-- Monk
 		[116189] = 115546, -- Provoke
-		[118635] = 115546, -- Provoke via the Black Ox Statue -- NEED TESTING
+		[118635] = 115546, -- Provoke (via the Black Ox Statue)
 		-- Paladin
 		[ 62124] = true, -- Reckoning
 		-- Warlock
@@ -116,7 +116,6 @@ local spellsAndProvidersByCategory = {
 		[ 82691] = true, -- Ring of Frost
 		-- Monk
 		[115078] = true, -- Paralysis
-		[137460] = 116844, -- Ring of Peace -- FIXME: correct spellIDs?
 		-- Paladin
 		[ 20066] = true, -- Repentance
 		-- Priest
@@ -131,7 +130,6 @@ local spellsAndProvidersByCategory = {
 		[ 51514] = true, -- Hex
 		-- Warlock
 		[   710] = true, -- Banish
-		-- [137143] = 111397, -- Blood Horror -- NOTE: gone in Legion TODO
 		[  6789] = true, -- Mortal Coil
 		-- Pandaren
 		[107079] = true, -- Quaking Palm
@@ -167,6 +165,9 @@ local spellsAndProvidersByCategory = {
 		[224729] = 186387, -- Bursting Shot (MM)
 		-- Mage
 		[ 31661] = true, -- Dragon's Breath
+		-- Monk
+		[198909] = 198898, -- Song of Chi-Ji (MM talent)
+		[202274] = 115181, -- Incendiary Brew (BM PvP) <- Breath of Fire
 		-- Paladin
 		[105421] = true, -- Blinding Light -- FIXME: is this the right category? Its missing from blizzard's list
 		-- [ 10326] = true, -- Turn Evil -- NOTE: gone in Legion
@@ -206,8 +207,9 @@ local spellsAndProvidersByCategory = {
 		[117526] = 109248, -- Binding Shot
 		[ 24394] = 19577, -- Intimidation
 		-- Monk
-		[120086] = 113656, -- Fists of Fury
+		[120086] = 113656, -- Fists of Fury (with Heavy-Handed Strikes) (WW PvP)
 		[119381] =   true, -- Leg Sweep
+		[202346] = 121253, -- Double Barrel (BM PvP) <- Keg Smash
 		-- Paladin
 		[   853] = true, -- Hammer of Justice
 		-- Rogue
@@ -243,7 +245,8 @@ local spellsAndProvidersByCategory = {
 		[   122] = true, -- Frost Nova
 		[ 33395] = true, -- Freeze (Water Elemental)
 		-- Monk
-		[116706] = 116095, -- Disable
+		[116706] = 116095, -- Disable (WW)
+		[123407] = 202077, -- Spinning Fire Blossom (WW PvP)
 		-- Priest
 		[114404] = true, -- Void Tendrils
 		-- Shaman
@@ -261,6 +264,10 @@ local spellsAndProvidersByCategory = {
 		[132469] = true, -- Typhoon
 		-- Hunter
 		[191244] = 191241, -- Sticky Bomb (SV talent)
+		-- Monk
+		[142895] = 116844, -- Ring of Peace
+		-- Crackling Jade Lightning
+		-- Mighty Ox Kick (BM PvP)
 		-- Shaman
 		[ 51490] = true, -- Thunderstorm
 		-- Warlock
