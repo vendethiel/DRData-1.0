@@ -73,8 +73,6 @@ Data.diminishedDurations = {
 -- See http://eu.battle.net/wow/en/forum/topic/11267997531
 -- or http://blue.mmo-champion.com/topic/326364-diminishing-returns-in-warlords-of-draenor/
 local spellsAndProvidersByCategory = {
-
-	--[[ TAUNT ]]--
 	taunt = {
 		-- Death Knight
 		[ 56222] = true, -- Dark Command
@@ -83,8 +81,6 @@ local spellsAndProvidersByCategory = {
 		[ 51399] = true, -- Death Grip
 		-- Druid
 		[  6795] = true, -- Growl
-		-- Hunter
-		[ 20736] = true, -- Distracting Shot
 		-- Monk
 		[116189] = 115546, -- Provoke
 		[118635] = 115546, -- Provoke via the Black Ox Statue -- NEED TESTING
@@ -98,13 +94,13 @@ local spellsAndProvidersByCategory = {
 		[ 36213] = true, -- Angered Earth (Earth Elemental)
 	},
 
-	--[[ INCAPACITATES ]]--
 	incapacitate = {
 		-- Druid
 		[    99] = true, -- Incapacitating Roar (talent)
 		-- Hunter
 		[  3355] = 187650, -- Freezing Trap
 		[ 19386] = true, -- Wyvern Sting
+		[209790] = 209789, -- Freezing Arrow (Incapacitate) (PvP)
 		-- Mage
 		[   118] = true, -- Polymorph
 		[ 28272] = true, -- Polymorph (pig)
@@ -137,13 +133,10 @@ local spellsAndProvidersByCategory = {
 		[107079] = true, -- Quaking Palm
 	},
 
-	--[[ SILENCES ]]--
 	silence = {
 		-- Death Knight
 		[108194] = true, -- Asphyxiate (if target is immune to stun)
 		[ 47476] = true, -- Strangulate
-		-- Mage
-		-- [102051] = true, -- Frostjaw -- NOTE: gone in Legion
 		-- Paladin
 		[ 31935] = true, -- Avenger's Shield
 		-- Priest
@@ -158,10 +151,12 @@ local spellsAndProvidersByCategory = {
 		[ 80483] = true, -- Arcane Torrent (Focus version)
 	},
 
-	--[[ DISORIENTS ]]--
 	disorient = {
 		-- Druid
 		[ 33786] = true, -- Cyclone
+		-- Hunter
+		[213691] = true, -- Scatter Shot (PvP)
+		[224729] = 186387, -- Bursting Shot (MM)
 		-- Mage
 		[ 31661] = true, -- Dragon's Breath
 		-- Paladin
@@ -182,7 +177,6 @@ local spellsAndProvidersByCategory = {
 		[  5246] = true, -- Intimidating Shout (main target)
 	},
 
-	--[[ STUNS ]]--
 	stun = {
 		-- Death Knight
 		[108194] = true, -- Asphyxiate
@@ -197,16 +191,11 @@ local spellsAndProvidersByCategory = {
 		-- Hunter
 		[117526] = 109248, -- Binding Shot
 		[ 24394] = 19577, -- Intimidation
-		-- Mage
-		-- [ 44572] = true, -- Deep Freeze -- NOTE: gone in Legion
 		-- Monk
-		-- [119392] =   true, -- Charging Ox Wave -- NOTE: gone in Legion
 		[120086] = 113656, -- Fists of Fury
 		[119381] =   true, -- Leg Sweep
 		-- Paladin
 		[   853] = true, -- Hammer of Justice
-		-- [119072] = true, -- Holy Wrath -- NOTE: gone in Legion
-		-- [105593] = true, -- Fist of Justice -- NOTE: gone in Legion
 		-- Rogue
 		[  1833] = true, -- Cheap Shot
 		[   408] = true, -- Kidney Shot
@@ -224,32 +213,29 @@ local spellsAndProvidersByCategory = {
 		[ 20549] = true, -- War Stomp
 	},
 
-	--[[ ROOTS ]]--
 	root = {
 		-- Death Knight
 		[ 96294] = true, -- Chains of Ice (Chilblains Root)
 		-- Druid
 		[   339] = true, -- Entangling Roots
 		[102359] = true, -- Mass Entanglement (talent)
-		-- [113770] = true, -- Entangling Roots (Treants) -- NOTE: gone in Legion
 		-- Hunter
 		[ 53148] = 61685, -- Charge (Tenacity pet)
-		[135373] = true, -- Entrapment (passive)
-		[136634] = true, -- Narrow Escape (passive talent)
+		[162480] = 162488, -- Steel Trap (SV talent)
+		[200108] = true, -- Ranger's Net (SV talent)
+		[201158] = 187698, -- Super Sticky Tar <- Tar Trap (with Expert Trapper) (SV talent)
+		[212638] = true, -- Tracker's Net (SV PvP)
 		-- Mage
 		[   122] = true, -- Frost Nova
 		[ 33395] = true, -- Freeze (Water Elemental)
-		-- [111340] = true, -- Ice Ward -- NOTE: gone in Legion
 		-- Monk
 		[116706] = 116095, -- Disable
 		-- Priest
 		[114404] = true, -- Void Tendrils
 		-- Shaman
-		-- [ 63685] = true, -- Freeze (Frozen Power talent) -- NOTE: gone in Legion
 		[ 64695] = true, -- Earthgrab Totem
 	},
 
-	--[[ KNOCKBACK ]]--
 	knockback = {
 		-- Death Knight
 		[108199] = true, -- Gorefiend's Grasp
@@ -257,7 +243,7 @@ local spellsAndProvidersByCategory = {
 		[102793] = true, -- Ursol's Vortex
 		[132469] = true, -- Typhoon
 		-- Hunter
-		-- [119403] = true, -- Glyph of Explosive Trap -- NOTE: gone in Legion
+		[191244] = 191241, -- Sticky Bomb (SV talent)
 		-- Shaman
 		[ 51490] = true, -- Thunderstorm
 		-- Warlock
