@@ -1,14 +1,11 @@
 local major = "DRData-1.0"
-local minor = 1048
+local minor = 1049
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
 if( not Data ) then return end
 
---local wow_700 = select(4, GetBuildInfo()) >= 70000
-
 local L = {
-	-- WoD
 	["Roots"]              = "Roots",
 	["Stuns"]              = "Stuns",
 	["Silences"]           = "Silences",
