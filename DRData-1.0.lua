@@ -189,6 +189,8 @@ local spellsAndProvidersByCategory = {
 		[161354] = true, -- Polymorph (monkey)
 		[161355] = true, -- Polymorph (penguin)
 		[161372] = true, -- Polymorph (peacock)
+		[277787] = true, -- Polymorph (direhorn)
+		[277792] = true, -- Polymorph (bumblebee)
 		[ 82691] = true, -- Ring of Frost
 		-- Monk
 		[115078] = true, -- Paralysis
