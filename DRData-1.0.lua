@@ -197,7 +197,6 @@ local spellsAndProvidersByCategory = {
 		-- Paladin
 		[ 20066] = true, -- Repentance
 		-- Priest
-		[   605] = true, -- Dominate Mind
 		[  9484] = true, -- Shackle Undead
 		[ 64044] = true, -- Psychic Horror (Horror effect)
 		[ 200196] = true, -- Holy Word: Chastise
@@ -269,6 +268,8 @@ local spellsAndProvidersByCategory = {
 		[105421] = true, -- Blinding Light -- FIXME: is this the right category? Its missing from blizzard's list
 		-- Priest
 		[  8122] = true, -- Psychic Scream
+		[   605] = true, -- Dominate Mind
+		[226943] = true, -- Mind Bomb
 		-- Rogue
 		[  2094] = true, -- Blind
 		-- Warlock
@@ -315,7 +316,6 @@ local spellsAndProvidersByCategory = {
 		[   853] = true, -- Hammer of Justice
 		-- Priest
 		[200200] = true, -- Holy word: Chastise
-		[226943] = true, -- Mind Bomb
 		-- Rogue
 		-- Shadowstrike note: 196958 is the stun, but it never applies to players,
 		-- so I haven't included it.
