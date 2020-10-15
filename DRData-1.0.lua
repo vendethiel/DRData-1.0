@@ -256,7 +256,6 @@ local spellsAndProvidersByCategory = {
 		-- Druid
 		[  2637] = true, -- Hibernate
 		[ 33786] = true, -- Cyclone
-		[209753] = true, -- Cyclone (Balance)
 		-- Hunter
 		[186387] = true, -- Bursting Shot
 		-- Mage
