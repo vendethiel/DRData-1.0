@@ -268,7 +268,9 @@ local spellsAndProvidersByCategory = {
 		-- Priest
 		[  8122] = true, -- Psychic Scream
 		[   605] = true, -- Dominate Mind
+		[331866] = true, -- Door of Shadows's Agent of Chaos
 		[226943] = true, -- Mind Bomb
+		[205369] = true, -- Mind Bomb
 		-- Rogue
 		[  2094] = true, -- Blind
 		-- Warlock
