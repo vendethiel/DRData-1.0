@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1060
+local minor = 1070
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -305,7 +305,6 @@ local spellsAndProvidersByCategory = {
 		[  5211] = true, -- Mighty Bash
 		[163505] = 1822, -- Rake (Stun from Prowl)
 		-- Hunter
-		[117526] = 109248, -- Binding Shot
 		[ 24394] = 19577, -- Intimidation
 		-- Mage
 
@@ -349,6 +348,7 @@ local spellsAndProvidersByCategory = {
 		[ 45334] = true, -- Immobilized (wild charge, bear form)
 		-- Hunter
 		[ 53148] = 61685, -- Charge (Tenacity pet)
+		[117526] = 109248, -- Binding Shot
 		[162480] = true, -- Steel Trap
 		[190927] = true, -- Harpoon
 		[200108] = true, -- Ranger's Net
