@@ -198,7 +198,6 @@ local spellsAndProvidersByCategory = {
 		[ 20066] = true, -- Repentance
 		-- Priest
 		[  9484] = true, -- Shackle Undead
-		[ 64044] = true, -- Psychic Horror (Horror effect)
 		[ 200196] = true, -- Holy Word: Chastise
 		-- Rogue
 		[  1776] = true, -- Gouge
@@ -317,16 +316,15 @@ local spellsAndProvidersByCategory = {
 		[   853] = true, -- Hammer of Justice
 		-- Priest
 		[200200] = true, -- Holy word: Chastise
+		[ 64044] = true, -- Psychic Horror (Horror effect)
 		-- Rogue
-		-- Shadowstrike note: 196958 is the stun, but it never applies to players,
-		-- so I haven't included it.
 		[  1833] = true, -- Cheap Shot
 		[   408] = true, -- Kidney Shot
-		[199804] = true, -- Between the Eyes
 		-- Shaman
 		[118345] = true, -- Pulverize (Primal Earth Elemental)
 		[118905] = true, -- Static Charge (Capacitor Totem)
 		[204399] = true, -- Earthfury (pvp talent)
+		[305483] = true, -- Lightning lasso
 		-- Warlock
 		[ 89766] = true, -- Axe Toss (Felguard)
 		[ 30283] = true, -- Shadowfury
