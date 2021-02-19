@@ -1,5 +1,5 @@
 local major = "DRData-1.0"
-local minor = 1100
+local minor = 1110
 assert(LibStub, string.format("%s requires LibStub.", major))
 
 local Data = LibStub:NewLibrary(major, minor)
@@ -243,7 +243,6 @@ local spellsAndProvidersByCategory = {
 		-- Druid
 		[  2637] = true, -- Hibernate
 		[ 33786] = true, -- Cyclone (rdruid/feral)
-		[209753] = true, -- Cyclone (Balance)
 		[236748] = true, -- Disorienting Roar
 		-- Hunter
 		-- Mage
