@@ -242,8 +242,7 @@ local spellsAndProvidersByCategory = {
 		[207685] = 207684, -- Sigil of Misery
 		-- Druid
 		[  2637] = true, -- Hibernate
-		[ 33786] = true, -- Cyclone (rdruid/feral)
-		[209753] = true, -- Cyclone (Balance)
+		[ 33786] = true, -- Cyclone
 		[236748] = true, -- Disorienting Roar
 		-- Hunter
 		-- Mage
@@ -283,13 +282,13 @@ local spellsAndProvidersByCategory = {
 		[208618] = 208173, -- Illidan's Grasp, secondary effect
 		[211881] = true, -- Fel Eruption
 		-- Druid
-		[203123] = true, -- Maim stun
+		[ 22570] = true, -- Maim stun
 		[  5211] = true, -- Mighty Bash
-		[163505] = 1822, -- Rake (Stun from Prowl)
+		[  1822] = 1822, -- Rake (Stun from Prowl)
 		[202244] = 202246, -- Overrun bear stun
 		-- Hunter
 		[117526] = 109248, -- Binding Shot
-		[ 24394] = 19577, -- Intimidation
+		[ 19577] = 19577, -- Intimidation
 		-- Mage
 
 		-- Monk
@@ -298,14 +297,14 @@ local spellsAndProvidersByCategory = {
 		-- Paladin
 		[   853] = true, -- Hammer of Justice
 		-- Priest
-		[200200] = 88625, -- Holy word: Chastise stun
+		[ 88625] = 88625, -- Holy word: Chastise stun
 		[ 64044] = true, -- Psychic Horror stun
 		-- Rogue
 		[  1833] = true, -- Cheap Shot
 		[   408] = true, -- Kidney Shot
 		[199804] = true, -- Between the Eyes
 		-- Shaman
-		[118345] = true, -- Pulverize (Primal Earth Elemental)
+		--[118345] = true, -- Pulverize (Primal Earth Elemental) V: broken for some reason
 		[118905] = 192058, -- Static Charge (Capacitor Totem)
 		[305485] = 305483, -- Lightning Lasso
 		-- Warlock
